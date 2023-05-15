@@ -26,6 +26,5 @@
 </template>
 
 <script setup lang="ts">
-// eslint-disable-next-line
 import "./lib";
 </script>

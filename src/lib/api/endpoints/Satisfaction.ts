@@ -4,13 +4,14 @@ import { SatisfactionCredential } from "../credentials";
 class Satisfaction {
   private _client: Client;
   private _loader;
-
-  constructor() {
+  public baseUrl: string;
+  constructor(baseUrl = "https://satisfaction.trustup.io.test") {
     this._client = new Client(
       new SatisfactionCredential().beforeSending((request) =>
         request.appendToBaseUrl("api/notes")
       )
     );
+    this.baseUrl = baseUrl;
     this._loader = new Loader(false);
   }
 
