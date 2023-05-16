@@ -2,3 +2,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.confirm-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-modal-content {
+  padding: 2.75rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  min-height: 37.5rem;
+  min-width: 34.5rem;
+  display: inline-block;
+}
+
+.confirm-modal-content>*+* {
+  margin: 0.5rem 0;
+}
+
+.dark .confirm-modal-content {
+  background: rgba(16, 15, 51, 0.6);
+}
