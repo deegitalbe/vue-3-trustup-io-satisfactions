@@ -1,6 +1,6 @@
 import { useModal } from "vue-final-modal";
 import type { Constructor } from "vue-final-modal";
-import AddNote from "@/components/modals/AddNote.vue";
+import AddNote from "../components/modals/AddNote.vue";
 
 const useComponentModal = <P extends Record<string, unknown>>(
   modalComponent: Constructor,

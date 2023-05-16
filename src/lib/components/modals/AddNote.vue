@@ -5,20 +5,21 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <satisfaction-form @success="success" />
+    <add-note @success="success" />
   </VueFinalModal>
 </template>
 
 <script setup lang="ts">
 import { VueFinalModal } from "vue-final-modal";
-import AddNote from "@/components/form/AddNote.vue";
+import AddNote from "../form/AddNote.vue";
+import { notify } from "../../composables";
 
 const emit = defineEmits<{
   (e: "close"): void;
 }>();
 const success = () => {
   emit("close");
-  useToasteoSuccess();
+  notify.useToasteoSuccess();
 };
 </script>
 
