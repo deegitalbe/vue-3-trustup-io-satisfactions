@@ -27,4 +27,10 @@
 
 <script setup lang="ts">
 import "./lib";
+import useReasonRequest from "./lib/composables/useReasonRequest";
+
+const reasonRequest = useReasonRequest();
+reasonRequest.fetch({ origin: "worksite" });
+const reasons = reasonRequest.reasons;
+console.log(reasons);
 </script>

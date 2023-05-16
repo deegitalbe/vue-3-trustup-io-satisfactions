@@ -1,28 +1,27 @@
 import { Client, Request } from "@henrotaym/api-client";
-import { Loader } from "@henrotaym/helpers";
 import ReasonCredential from "../credentials/ReasonCredential";
-import { SafeParseError, ZodError, z } from "zod";
+import { z } from "zod";
 
-const QueryZ = z.object({
+const queryZ = z.object({
   origin: z.enum(["marketplace", "worksite"]),
 });
-type Query = z.infer<typeof QueryZ>;
+export type Query = z.infer<typeof queryZ>;
+
+const reasonAttributes = z.object({
+  id: z.number(),
+  title: z.string(),
+  origin: z.enum(["marketplace", "worksite"]),
+});
+export type ReasonAttributes = z.infer<typeof reasonAttributes>;
 
 const ResponseSchema = z.object({
-  data: z
-    .object({
-      id: z.number(),
-      title: z.string(),
-      origin: z.enum(["marketplace", "worksite"]),
-    })
-    .array(),
+  data: reasonAttributes.array(),
 });
 
 export type ReasonResponse = z.infer<typeof ResponseSchema>;
 
 class Reason {
   private _client: Client;
-  private _loader;
   public baseUrl: string;
 
   constructor(baseUrl = "https://satisfaction.trustup.io.test") {
@@ -32,24 +31,17 @@ class Reason {
       )
     );
     this.baseUrl = baseUrl;
-    this._loader = new Loader(false);
-  }
-
-  public get isLoading() {
-    return this._loader.isLoading;
   }
 
   async index(query: Query): Promise<ReasonResponse | undefined> {
-    const validation = QueryZ.safeParse(query);
+    const validation = queryZ.safeParse(query);
 
     if (!validation.success) return;
 
     const request = new Request<ReasonResponse>()
       .setVerb("GET")
       .addQuery(query);
-    const response = await this._loader.loadTill(() =>
-      this._client.try(request)
-    );
+    const response = await this._client.try(request);
 
     if (response?.failed()) return;
     console.log(response?.response?.get());

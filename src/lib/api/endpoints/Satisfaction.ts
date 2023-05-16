@@ -1,9 +1,19 @@
 import { Client, Request } from "@henrotaym/api-client";
-import { Loader } from "@henrotaym/helpers";
 import { SatisfactionCredential } from "../credentials";
+import { z } from "zod";
+
+const QueryZ = z.object({
+  value: z.number().gte(0).lte(5).int(),
+  origin: z.enum(["marketplace", "worksite"]),
+  text: z.string().min(10),
+  created_by: z.number().int(),
+  is_using: z.boolean(),
+  professional_id: z.number().int(),
+  reason_id: z.number().int(),
+});
+export type SatisfactionQuery = z.infer<typeof QueryZ>;
 class Satisfaction {
   private _client: Client;
-  private _loader;
   public baseUrl: string;
   constructor(baseUrl = "https://satisfaction.trustup.io.test") {
     this._client = new Client(
@@ -12,18 +22,11 @@ class Satisfaction {
       )
     );
     this.baseUrl = baseUrl;
-    this._loader = new Loader(false);
   }
 
-  public get isLoading() {
-    return this._loader.isLoading;
-  }
-
-  async store() {
-    const request = new Request().setVerb("POST");
-    const response = await this._loader.loadTill(() =>
-      this._client.try(request)
-    );
+  async store(query: SatisfactionQuery) {
+    const request = new Request().setVerb("POST").addData(query);
+    const response = await this._client.try(request);
 
     if (response?.failed()) return;
 
