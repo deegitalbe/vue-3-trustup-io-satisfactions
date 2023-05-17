@@ -5,13 +5,13 @@ import { Field, useReactiveForm } from "@henrotaym/vue-3-forms";
 const useRatingsForm = () => {
   const ratings = new Field({
     label: "ratings",
-    value: 0,
+    value: 2,
     validation: Joi.number().min(1).max(5),
   });
 
   const noteDetails = new Field({
     label: "noteDetails",
-    value: "",
+    value: "sqdfqsdfqsdf",
     validation: Joi.string().required(),
   });
 
@@ -23,7 +23,7 @@ const useRatingsForm = () => {
 
   const reason = new Field({
     label: "Reasons",
-    value: "",
+    value: "sdfqsdfqsdfq",
     validation: Joi.string().required(),
   });
 
@@ -34,10 +34,14 @@ const useRatingsForm = () => {
     isUsing,
     reason,
   });
-  // const test = () => {
-  //   console.log("couocu");
-  // };
-  // form.onSubmit(async () => test());
+
+  form.onSubmit(async () => {
+    console.log("coucou");
+    await new Promise<boolean>((resolve) =>
+      setTimeout(() => resolve(true), 5000)
+    );
+    form.clear();
+  });
 
   return form;
 };

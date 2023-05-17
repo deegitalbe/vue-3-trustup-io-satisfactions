@@ -16,7 +16,7 @@
         ></selectable-input>
       </row-with-input>
       <row-with-input>
-        <text-area label="note details" />
+        <text-area v-model="test" label="note details" />
       </row-with-input>
     </div>
   </form-container>
@@ -28,13 +28,13 @@ import RowWithInput from "./RowWithInput.vue";
 import CheckBoxes from "../inputs/CheckBoxes.vue";
 import useReasonRequest from "../../composables/useReasonRequest";
 import SelectableInput from "../inputs/SelectablesInput.vue";
-import { ref } from "vue";
 
 import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
 import useRatingsForm from "../../composables/useFormFields";
+import { ref } from "vue";
 
-const test = ref();
+const test = ref("");
 const form = useRatingsForm();
 const reasonRequest = useReasonRequest();
 reasonRequest.fetch({ origin: "worksite" });

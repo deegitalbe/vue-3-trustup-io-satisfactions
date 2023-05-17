@@ -7,9 +7,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { boolean } from "zod";
-
-const props = defineProps({
-  isCentered: boolean,
+const props = withDefaults(defineProps<{ isCentered: boolean }>(), {
+  isCentered: false,
 });
 </script>
