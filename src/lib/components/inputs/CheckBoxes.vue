@@ -1,15 +1,16 @@
 <template>
   <div class="flex space-x-2">
-    <label
+    <!-- <label
       for="isUsing"
       class="text-gray-500 flex first-letter:capitalize whitespace-nowrap"
       >Using App:</label
-    >
+    > -->
     <div
       class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in text-[#dbd1d1]"
     >
       <input
         id="toggle"
+        v-model="selected"
         type="checkbox"
         name="toggle"
         class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
@@ -21,7 +22,26 @@
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { computed } from "vue";
+import { Field } from "@henrotaym/vue-3-forms";
+import { Reactive } from "@henrotaym/vue-3-forms";
+
+interface Props {
+  formField: Reactive<Field>;
+}
+
+const props = defineProps<Props>();
+
+const selected = computed({
+  get() {
+    return props.formField.value as boolean;
+  },
+  set(modelValue: boolean) {
+    props.formField.setValue(modelValue);
+  },
+});
+</script>
 <style>
 /* CHECKBOX TOGGLE SWITCH */
 /* @apply rules for documentation, these do not work as inline style */

@@ -24,7 +24,7 @@
 import { computed } from "vue";
 import { Selectables } from "../../composables/useSelectables";
 const props = defineProps<{
-  modelValue: string;
+  modelValue: string | undefined;
   trackBy: keyof Selectables;
   title: string;
   selectables: Selectables[];
@@ -37,7 +37,7 @@ const emit = defineEmits<{
 
 const selected = computed({
   get() {
-    return props.modelValue;
+    return props.modelValue as string;
   },
   set(modelValue: string) {
     emit("update:modelValue", modelValue);

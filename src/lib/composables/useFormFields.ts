@@ -10,20 +10,20 @@ const useRatingsForm = () => {
   });
 
   const noteDetails = new Field({
-    label: "noteDetails",
-    value: "sqdfqsdfqsdf",
+    label: "note Details",
+    value: "",
     validation: Joi.string().required(),
   });
 
   const isUsing = new Field({
-    label: "isUsing",
+    label: "Using app",
     value: true,
     validation: Joi.boolean().required(),
   });
 
   const reason = new Field({
     label: "Reasons",
-    value: "sdfqsdfqsdfq",
+    value: undefined,
     validation: Joi.string().required(),
   });
 
@@ -36,11 +36,7 @@ const useRatingsForm = () => {
   });
 
   form.onSubmit(async () => {
-    console.log("coucou");
-    await new Promise<boolean>((resolve) =>
-      setTimeout(() => resolve(true), 5000)
-    );
-    form.clear();
+    console.log(ratings.value);
   });
 
   return form;

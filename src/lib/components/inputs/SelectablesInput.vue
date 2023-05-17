@@ -3,7 +3,7 @@
     v-model="selected"
     :selectables="selectables"
     track-by="value"
-    title="Reason"
+    title="Select a reason"
   ></select-common>
 </template>
 <script lang="ts" setup>
@@ -11,23 +11,21 @@ import { useSelectableReason } from "../../composables/useReasonSelectables";
 import Reason from "../../models/Reason";
 import SelectCommon from "./SelectCommon.vue";
 import { computed } from "vue";
+import { Reactive, Field } from "@henrotaym/vue-3-forms";
+
 const props = defineProps<{
   reasons: Array<Reason>;
-  modelValue: string;
-}>();
-
-const emit = defineEmits<{
-  (e: "change", selected: string): void;
-  (e: "update:modelValue", selected: string): void;
+  formField: Reactive<Field>;
 }>();
 
 const { selectables } = useSelectableReason(props.reasons);
+console.log(selectables);
 const selected = computed({
   get() {
-    return props.modelValue;
+    return props.formField.value as string;
   },
   set(modelValue: string) {
-    emit("update:modelValue", modelValue);
+    props.formField.setValue(modelValue);
   },
 });
 </script>

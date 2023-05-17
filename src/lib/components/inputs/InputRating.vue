@@ -22,17 +22,12 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const emit = defineEmits<{
-  (e: "update:modelValue", input: string): void;
-}>();
 const ratingValue = computed({
   get() {
-    return props.formField.value;
+    return props.formField.value as number;
   },
-  set(modelValue: string) {
+  set(modelValue: number) {
     props.formField.setValue(modelValue);
-
-    emit("update:modelValue", modelValue);
   },
 });
 </script>

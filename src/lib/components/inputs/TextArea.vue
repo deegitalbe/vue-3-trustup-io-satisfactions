@@ -1,10 +1,5 @@
 <template>
   <div class="w-full space-y-1">
-    <label
-      :for="trimLabel"
-      class="text-gray-500 first-letter:capitalize capitalize whitespace-nowrap"
-      >{{ label }}</label
-    >
     <textarea
       :id="trimLabel"
       v-model="input"
@@ -17,23 +12,22 @@
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
+import { Reactive, Field } from "@henrotaym/vue-3-forms";
 
 const props = defineProps<{
   label: string;
-  modelValue: string;
-}>();
-
-const emit = defineEmits<{
-  (e: "update:modelValue", input: string): void;
+  formField: Reactive<Field>;
 }>();
 
 const input = computed({
   get() {
-    if (!props.modelValue) return "";
-    return props.modelValue;
+    console.log(props.formField.value);
+    return props.formField.value as string;
   },
   set(modelValue: string) {
-    emit("update:modelValue", modelValue);
+    console.log(props.formField.value);
+
+    props.formField.setValue(modelValue);
   },
 });
 

@@ -10,8 +10,8 @@ defineProps<Props>();
 </script>
 
 <template>
-  <fieldset class="flex flex-col gap-2">
-    <label class="text-sm text-gray-600 block" for="">{{
+  <fieldset class="flex flex-col gap-2 w-full">
+    <label class="text-sm text-gray-600 block capitalize" for="">{{
       formField.label
     }}</label>
     <slot></slot>
