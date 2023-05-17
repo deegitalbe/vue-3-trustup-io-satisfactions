@@ -1,7 +1,10 @@
 <template>
   <form-container v-if="reasonRequest.isReady()" :form="form">
     <div class="space-y-4">
-      <row-with-input :is-centered="true">
+      <row-with-input
+        v-if="form.fields.isUsing.value === true"
+        :is-centered="true"
+      >
         <form-field :form-field="form.fields.ratings" class="items-center">
           <input-rating :form-field="form.fields.ratings"></input-rating>
         </form-field>
@@ -39,7 +42,7 @@ import useReasonRequest from "../../composables/useReasonRequest";
 import SelectableInput from "../inputs/SelectablesInput.vue";
 import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
-import useRatingsForm from "../../composables/useFormFields";
+import useRatingsForm from "../../composables/useRatingsForm";
 
 const form = useRatingsForm();
 const reasonRequest = useReasonRequest();

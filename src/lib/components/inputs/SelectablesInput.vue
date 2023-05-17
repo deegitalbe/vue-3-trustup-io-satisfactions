@@ -2,8 +2,11 @@
   <select-common
     v-model="selected"
     :selectables="selectables"
-    track-by="value"
+    track-by="id"
     title="Select a reason"
+    :form-field="formField"
+    @input="formField.validator.resetValidation"
+    @blur="formField.validator.validate"
   ></select-common>
 </template>
 <script lang="ts" setup>
@@ -22,9 +25,9 @@ const { selectables } = useSelectableReason(props.reasons);
 console.log(selectables);
 const selected = computed({
   get() {
-    return props.formField.value as string;
+    return props.formField.value as number;
   },
-  set(modelValue: string) {
+  set(modelValue: number) {
     props.formField.setValue(modelValue);
   },
 });

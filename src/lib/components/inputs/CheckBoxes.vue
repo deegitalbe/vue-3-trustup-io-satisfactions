@@ -14,6 +14,8 @@
         type="checkbox"
         name="toggle"
         class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+        @input="formField.validator.resetValidation"
+        @blur="formField.validator.validate"
       />
       <label
         for="toggle"

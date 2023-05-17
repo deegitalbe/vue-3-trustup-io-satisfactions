@@ -3,7 +3,7 @@ import { SatisfactionEndpoint } from "../api/endpoints";
 import { SatisfactionQuery } from "../api/endpoints/Satisfaction";
 
 export class SatisfactionNoteRequest {
-  private _satisfaction?: ReasonResponse;
+  private _satisfaction?: SatisfactionQuery;
   private _endpoint;
   private _loader;
 
@@ -13,10 +13,11 @@ export class SatisfactionNoteRequest {
   }
 
   public store(query: SatisfactionQuery) {
-    return this._loader.loadTill(async () => {
-      const response = await this._endpoint.store(query);
-      this._satisfaction = response;
-    });
+    console.log(query);
+    // return this._loader.loadTill(async () => {
+    //   const response = await this._endpoint.store(query);
+    //   this._satisfaction = response;
+    // });
   }
 
   // public isReady(): this is {

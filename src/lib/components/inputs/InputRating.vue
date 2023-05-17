@@ -7,6 +7,8 @@
       :animate="true"
       :show-rating="false"
       :active-color="['red', 'red', 'orange', 'green', 'green']"
+      @input="formField.validator.resetValidation"
+      @blur="formField.validator.validate"
     ></star-rating>
   </div>
 </template>

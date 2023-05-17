@@ -5,7 +5,7 @@
     </h3>
     <slot></slot>
     <button
-      class="px-4 py-3 border-gray-100 rounded-md shadow transition"
+      class="px-4 py-3 border-gray-100 rounded-md shadow transition flex ml-auto"
       :class="{
         'cursor-default text-slate-500 bg-slate-200': !form.isActive,
         'text-white  bg-blue-500 hover:bg-blue-600': form.isActive,

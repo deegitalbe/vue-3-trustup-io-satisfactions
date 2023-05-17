@@ -4,9 +4,11 @@
       :id="trimLabel"
       v-model="input"
       :name="trimLabel"
-      class="border-[#EDEDED] border-[1px] rounded-[10px] px-4 py-3 w-full"
+      class="border-[#EDEDED] border-[1px] rounded-[10px] px-4 py-3 w-full resize-none"
       rows="8"
       cols="60"
+      @input="formField.validator.resetValidation"
+      @blur="formField.validator.validate"
     />
   </div>
 </template>
@@ -21,12 +23,9 @@ const props = defineProps<{
 
 const input = computed({
   get() {
-    console.log(props.formField.value);
     return props.formField.value as string;
   },
   set(modelValue: string) {
-    console.log(props.formField.value);
-
     props.formField.setValue(modelValue);
   },
 });
