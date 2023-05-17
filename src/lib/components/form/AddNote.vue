@@ -1,22 +1,41 @@
 <template>
-  <form class="space-y-8" action="" @submit.prevent="createSatisfactionNote()">
-    <h3 class="first-letter:capitalize text-center text-base font-semibold">
-      {{ $t("app.form.title.satisfaction") }}
-    </h3>
-
-    <div class="items-center grid grid-cols-3 gap-4 mt-5">
-      <div class="col-span-2 font-normal text-sm">
-        <label for="account" class="text-gray-500 block first-letter:capitalize"
-          >Account</label
-        >
-        <input
-          id="account"
-          type="text"
-          name="account"
-          class="border-[#EDEDED] border-[1px] rounded-[10px] p-2 mt-1 w-full"
-        />
-      </div>
+  <form-container v-if="reasonRequest.isReady()" :form="form">
+    <div class="space-y-4">
+      <row-with-input :is-centered="true">
+        <form-field :form-field="form.fields.ratings">
+          <input-rating :form-field="form.fields.ratings"></input-rating>
+        </form-field>
+      </row-with-input>
+      <row-with-input>
+        <check-boxes></check-boxes>
+      </row-with-input>
+      <row-with-input>
+        <selectable-input
+          v-model="test"
+          :reasons="reasonRequest.reasons"
+        ></selectable-input>
+      </row-with-input>
+      <row-with-input>
+        <text-area label="note details" />
+      </row-with-input>
     </div>
-  </form>
+  </form-container>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import InputRating from "../inputs/InputRating.vue";
+import TextArea from "../inputs/TextArea.vue";
+import RowWithInput from "./RowWithInput.vue";
+import CheckBoxes from "../inputs/CheckBoxes.vue";
+import useReasonRequest from "../../composables/useReasonRequest";
+import SelectableInput from "../inputs/SelectablesInput.vue";
+import { ref } from "vue";
+
+import FormContainer from "./FormContainer.vue";
+import FormField from "./FormField.vue";
+import useRatingsForm from "../../composables/useFormFields";
+
+const test = ref();
+const form = useRatingsForm();
+const reasonRequest = useReasonRequest();
+reasonRequest.fetch({ origin: "worksite" });
+</script>

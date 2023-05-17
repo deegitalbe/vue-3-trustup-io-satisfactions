@@ -4,7 +4,7 @@
   >
     <div
       class="absolute top-5 right-5 py-1 px-2 bg-[#FF8A00] rounded-md text-white text-xs font-semibold cursor-pointer text-center"
-      @click="addNote.open()"
+      @click="createNoteModal.open()"
     >
       <i class="fa-solid fa-plus font-s text-2xl" />
     </div>
@@ -16,17 +16,11 @@
 
 <script setup lang="ts">
 import "./lib";
-import useReasonRequest from "./lib/composables/useReasonRequest";
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
-import { useAddNote } from "./lib/utils/emitter";
+import { useCreateNoteModal } from "./lib/utils/emitter";
 import { ModalsContainer } from "vue-final-modal";
 
 const toasteo = useToasteo();
-
-const reasonRequest = useReasonRequest();
-reasonRequest.fetch({ origin: "worksite" });
-const reasons = reasonRequest.reasons;
-console.log(reasons);
-const addNote = useAddNote();
+const createNoteModal = useCreateNoteModal();
 </script>

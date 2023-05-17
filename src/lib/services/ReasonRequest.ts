@@ -5,7 +5,7 @@ import {
   ReasonResponse,
   ReasonAttributes,
 } from "../api/endpoints/Reason";
-import { Reason } from "../models/Reason";
+import Reason from "../models/Reason";
 
 export class ReasonRequest {
   private _reasons?: Reason[];
@@ -17,8 +17,8 @@ export class ReasonRequest {
     this._loader = new Loader(false);
   }
 
-  public fetch(origin: Query) {
-    return this._loader.loadTill(async () => {
+  public async fetch(origin: Query) {
+    return await this._loader.loadTill(async () => {
       const response = await this._endpoint.index(origin);
       if (!response) return;
       this.setArrayOfReasonModel(response);
@@ -26,13 +26,22 @@ export class ReasonRequest {
   }
 
   public setArrayOfReasonModel(response: ReasonResponse) {
+    this._reasons = [];
+    if (!this.isEmpty()) return;
     response.data.forEach((reason: ReasonAttributes) => {
-      this._reasons?.push(new Reason(reason));
+      this.reasons?.push(new Reason(reason));
     });
   }
 
+  private isEmpty(): this is {
+    reasons: Reason[];
+  } {
+    return this._reasons?.length === 0;
+  }
+
   public isReady(): this is {
-    reasons: ReasonResponse;
+    reasons: Reason[];
+    loader: { isLoading: false };
   } {
     return this._reasons !== undefined && !this._loader.isLoading;
   }

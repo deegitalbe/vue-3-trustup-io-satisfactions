@@ -4,5 +4,7 @@
   },
   "files.eol": "\n",
   "editor.tabSize": 2,
-  "css.customData": ["./.vscode/css-data.json"]
+  "css.customData": [
+    "./.vscode/css-data.json"
+  ],
 }

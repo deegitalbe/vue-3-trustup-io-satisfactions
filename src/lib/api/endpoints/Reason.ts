@@ -32,7 +32,6 @@ class Reason {
     );
     this.baseUrl = baseUrl;
   }
-
   async index(query: Query): Promise<ReasonResponse | undefined> {
     const validation = queryZ.safeParse(query);
 
