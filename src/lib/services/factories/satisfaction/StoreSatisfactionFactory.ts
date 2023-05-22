@@ -16,15 +16,13 @@ export default class StoreSatisfactionFactory {
       reason_id: 0,
     };
   }
-  create(dirtyFields: Reactive<Partial<RatingFields>>) {
-    this.setDirtyFieldValueAsData(dirtyFields);
+  create(fields: Reactive<Partial<RatingFields>>) {
+    this.setDirtyFieldValueAsData(fields);
     return this.getSatisfactionQuery();
   }
 
-  private setDirtyFieldValueAsData(
-    dirtyFields: Reactive<Partial<RatingFields>>
-  ) {
-    Object.entries(dirtyFields).forEach((field) => {
+  private setDirtyFieldValueAsData(fields: Reactive<Partial<RatingFields>>) {
+    Object.entries(fields).forEach((field) => {
       this.setNoteDetails(field[0], field[1] as Field);
       this.setRatings(field[0], field[1] as Field);
       this.setReason(field[0], field[1] as Field);

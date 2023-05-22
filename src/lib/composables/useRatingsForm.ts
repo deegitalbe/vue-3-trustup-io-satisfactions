@@ -2,6 +2,7 @@ import Joi from "joi";
 import { Field, useReactiveForm } from "@henrotaym/vue-3-forms";
 import StoreSatisfactionFactory from "../services/factories/satisfaction/StoreSatisfactionFactory";
 import { SatisfactionNoteRequest } from "../services/SatisfactionNoteRequest";
+import { reactive } from "vue";
 
 // SEND DEFAULT PARAMS ON OPEN MODAL (LOADING THIS COMPOSABLE)
 
@@ -48,9 +49,12 @@ const useRatingsForm = (initData) => {
 
   form.onSubmit(async () => {
     const factory = new StoreSatisfactionFactory(initData);
-    const query = factory.create(form.dirtyFields);
-    const satisfactionNoteRequest = new SatisfactionNoteRequest();
-    satisfactionNoteRequest.store(query);
+    const query = factory.create(form.fields);
+    const satisfactionNoteRequest = reactive(new SatisfactionNoteRequest());
+    const response = satisfactionNoteRequest.store(query);
+    if (!response) return;
+    console.log("SHOULD CLEAR");
+    form.clear();
   });
 
   return form;

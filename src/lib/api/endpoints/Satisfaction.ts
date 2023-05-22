@@ -31,7 +31,6 @@ class Satisfaction {
     const response = await this._client.try(request);
 
     if (response?.failed()) return;
-    console.log(response?.response?.get());
     return response?.response?.get();
   }
 }
