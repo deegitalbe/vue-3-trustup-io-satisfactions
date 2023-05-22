@@ -1,7 +1,7 @@
 import Joi from "joi";
 import { Field, useReactiveForm } from "@henrotaym/vue-3-forms";
 import api from "../api/endpoints/index";
-import { InitialField } from "../components/form/AddNote.vue";
+import { Satisfaction } from "../types/Satisfaction";
 
 // SEND DEFAULT PARAMS ON OPEN MODAL (LOADING THIS COMPOSABLE)
 
@@ -18,52 +18,52 @@ export type RatingFields = {
 
 export type K = keyof RatingFields;
 
-const useRatingsForm = (initData: InitialField) => {
+const useUpdateRatingsForm = (model: Satisfaction) => {
   const ratings = new Field({
     label: "ratings",
-    value: 2,
+    value: model?.data.value,
     validation: Joi.number().min(1).max(5),
   });
 
   const noteDetails = new Field({
     label: "note Details",
-    value: "",
+    value: model?.data.text,
     validation: Joi.string().min(10).required(),
   });
 
   const isUsing = new Field({
     label: "Using app",
-    value: true,
+    value: model?.data.is_using,
     validation: Joi.boolean().required(),
   });
 
   const reason = new Field({
     label: "Reasons",
-    value: null,
+    value: model?.data.reason.id,
     validation: Joi.number().required(),
   });
 
   const origin = new Field({
     label: "origin",
-    value: initData.origin,
+    value: model.data.origin,
     validation: Joi.string(),
   });
 
   const createdById = new Field({
     label: "created_by_id",
-    value: initData.created_by_id,
+    value: model.data.created_by_id,
     validation: Joi.number(),
   });
 
   const relatedToId = new Field({
     label: "related_to_id",
-    value: initData.related_to_id,
+    value: model.data.related_to_id,
     validation: Joi.string(),
   });
 
   const relatedToType = new Field({
     label: "related_to_type",
-    value: initData.related_to_type,
+    value: model.data.related_to_type,
     validation: Joi.string(),
   });
 
@@ -81,7 +81,8 @@ const useRatingsForm = (initData: InitialField) => {
   const form = useReactiveForm(fields);
 
   form.onSubmit(async () => {
-    const response = api.storeSatisfaction.store(form.fields);
+    if (!model) return;
+    const response = api.updateSatisfaction.update({ fields, model });
     if (!response) return;
     form.clear();
   });
@@ -89,4 +90,4 @@ const useRatingsForm = (initData: InitialField) => {
   return form;
 };
 
-export default useRatingsForm;
+export default useUpdateRatingsForm;

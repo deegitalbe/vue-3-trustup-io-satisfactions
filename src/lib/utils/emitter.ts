@@ -1,6 +1,8 @@
 import { useModal } from "vue-final-modal";
 import type { Constructor } from "vue-final-modal";
 import CreateNoteModal from "../components/modals/CreateNoteModal.vue";
+import UpdateNoteModal from "../components/modals/UpdateNoteModal.vue";
+import Satisfaction from "../types/Satisfaction";
 
 const useComponentModal = <P extends Record<string, unknown>>(
   modalComponent: Constructor,
@@ -23,4 +25,8 @@ const useComponentModal = <P extends Record<string, unknown>>(
 
 export const useCreateNoteModal = () => {
   return useComponentModal(CreateNoteModal, {});
+};
+
+export const useUpdateNoteModal = (props: { model: Satisfaction }) => {
+  return useComponentModal(UpdateNoteModal, props);
 };

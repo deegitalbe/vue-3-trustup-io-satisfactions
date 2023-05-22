@@ -13,7 +13,7 @@ class StoreSatisfactionRequestFactory {
     this.baseUrl = baseUrl;
   }
 
-  public create(fields: Reactive<Partial<RatingFields>>) {
+  public create(fields: Reactive<RatingFields>) {
     const request = this._requestFactory.create();
     request
       .setBaseUrl(this.baseUrl)

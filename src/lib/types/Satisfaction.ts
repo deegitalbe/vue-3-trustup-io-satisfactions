@@ -10,7 +10,7 @@ export interface Data {
   is_using: boolean;
   reason: Reason;
   created_by_id: number;
-  date: Date;
+  date: string;
   related_to_id: string;
   related_to_type: string;
 }

@@ -47,13 +47,13 @@ import useRatingsForm from "../../composables/useRatingsForm";
 export type InitialField = {
   origin: string;
   created_by_id: number;
-  related_to_id: number;
+  related_to_id: string;
   related_to_type: string;
 };
 const form = useRatingsForm({
   origin: "worksite",
   created_by_id: 1,
-  related_to_id: 1,
+  related_to_id: "1",
   related_to_type: "tenant",
 });
 const reasonRequest = useReasonRequest();

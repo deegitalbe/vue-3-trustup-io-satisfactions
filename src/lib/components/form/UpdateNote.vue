@@ -42,7 +42,8 @@ import useReasonRequest from "../../composables/useReasonRequest";
 import SelectableInput from "../inputs/SelectablesInput.vue";
 import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
-import useRatingsForm from "../../composables/useRatingsForm";
+import useUpdateRatingsForm from "../../composables/useUpdateRatingsForm ";
+import Satisfaction from "../../types/Satisfaction";
 
 export type InitialField = {
   origin: string;
@@ -50,12 +51,12 @@ export type InitialField = {
   related_to_id: string;
   related_to_type: string;
 };
-const form = useRatingsForm({
-  origin: "worksite",
-  created_by_id: 1,
-  related_to_id: "1",
-  related_to_type: "tenant",
-});
+interface Props {
+  model: Satisfaction;
+}
+const props = defineProps<Props>();
+
+const form = useUpdateRatingsForm(props.model);
 const reasonRequest = useReasonRequest();
 reasonRequest.fetch({ origin: "worksite" });
 </script>

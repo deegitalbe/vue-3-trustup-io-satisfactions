@@ -23,11 +23,10 @@ class StoreSatisfactionEndpoint {
     this._requestFactory = new StoreSatisfactionRequestFactory();
   }
 
-  async store(fields: Reactive<Partial<RatingFields>>) {
+  async store(fields: Reactive<RatingFields>) {
     const client = this._clientFactory.create();
     const request = this._requestFactory.create(fields);
     const response = await client.try(request);
-    console.log(response);
 
     if (response?.failed()) return;
     return response?.response?.get();

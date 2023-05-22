@@ -1,8 +1,12 @@
 import Satisfaction from "./StoreSatisfaction";
 import Reason from "./Reason";
+import StoreSatisfactionEndpoint from "./StoreSatisfaction";
+import UpdateSatisfactionEndpoint from "./UpdateSatisfaction";
 
 const api = {
-  satisfaction: new Satisfaction(),
+  storeSatisfaction: new StoreSatisfactionEndpoint(),
+  updateSatisfaction: new UpdateSatisfactionEndpoint(),
+
   reason: new Reason(),
 };
 
