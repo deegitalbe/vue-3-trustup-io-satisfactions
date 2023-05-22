@@ -44,7 +44,11 @@ import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
 import useRatingsForm from "../../composables/useRatingsForm";
 
-const form = useRatingsForm();
+const form = useRatingsForm({
+  origin: "worksite",
+  createdBy: 1,
+  professionalId: 1,
+});
 const reasonRequest = useReasonRequest();
 reasonRequest.fetch({ origin: "worksite" });
 </script>
