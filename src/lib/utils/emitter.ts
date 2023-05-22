@@ -3,6 +3,7 @@ import type { Constructor } from "vue-final-modal";
 import CreateNoteModal from "../components/modals/CreateNoteModal.vue";
 import UpdateNoteModal from "../components/modals/UpdateNoteModal.vue";
 import Satisfaction from "../types/Satisfaction";
+import { InitialField } from "../components/form/AddNote.vue";
 
 const useComponentModal = <P extends Record<string, unknown>>(
   modalComponent: Constructor,
@@ -15,16 +16,14 @@ const useComponentModal = <P extends Record<string, unknown>>(
       onClose() {
         instance.close();
       },
-      // onBeforeClose() {
-      //   loadStop();
-      // },
+      // onSuccess: (callback: (rating: Rating) => void),
     },
   });
   return instance;
 };
 
-export const useCreateNoteModal = () => {
-  return useComponentModal(CreateNoteModal, {});
+export const useCreateNoteModal = (props: { data: InitialField }) => {
+  return useComponentModal(CreateNoteModal, props);
 };
 
 export const useUpdateNoteModal = (props: { model: Satisfaction }) => {

@@ -5,7 +5,7 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <add-note @success="success" />
+    <add-note :data="data" @success="success" />
   </VueFinalModal>
 </template>
 
@@ -13,10 +13,16 @@
 import { VueFinalModal } from "vue-final-modal";
 import AddNote from "../form/AddNote.vue";
 import { notify } from "../../composables";
+import { InitialField } from "../form/AddNote.vue";
 
 const emit = defineEmits<{
   (e: "close"): void;
 }>();
+
+interface Props {
+  data: InitialField;
+}
+defineProps<Props>();
 const success = () => {
   emit("close");
   notify.useToasteoSuccess();

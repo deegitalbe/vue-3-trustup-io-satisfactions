@@ -50,11 +50,16 @@ export type InitialField = {
   related_to_id: string;
   related_to_type: string;
 };
+
+interface Props {
+  data: InitialField;
+}
+const props = defineProps<Props>();
 const form = useRatingsForm({
-  origin: "worksite",
-  created_by_id: 1,
-  related_to_id: "1",
-  related_to_type: "tenant",
+  origin: props.data.origin,
+  created_by_id: props.data.created_by_id,
+  related_to_id: props.data.related_to_id,
+  related_to_type: props.data.related_to_type,
 });
 const reasonRequest = useReasonRequest();
 reasonRequest.fetch({ origin: "worksite" });
