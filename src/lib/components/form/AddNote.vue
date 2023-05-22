@@ -53,8 +53,12 @@ export type InitialField = {
 
 interface Props {
   data: InitialField;
+  callback: () => void;
 }
+
 const props = defineProps<Props>();
+console.log(props.callback);
+props.callback();
 const form = useRatingsForm({
   origin: props.data.origin,
   created_by_id: props.data.created_by_id,

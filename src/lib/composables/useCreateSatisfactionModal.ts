@@ -14,7 +14,10 @@ const useCreateSatisfaction = (
     related_to_type: related_to_type,
     created_by_id: created_by_id,
   };
-  const { open, close } = useCreateNoteModal({ data });
+  const test = () => {
+    console.log("coucou");
+  };
+  const { open, close } = useCreateNoteModal({ data, callback: test });
   return { open, close };
 };
 

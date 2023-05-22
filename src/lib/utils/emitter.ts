@@ -22,7 +22,10 @@ const useComponentModal = <P extends Record<string, unknown>>(
   return instance;
 };
 
-export const useCreateNoteModal = (props: { data: InitialField }) => {
+export const useCreateNoteModal = (props: {
+  data: InitialField;
+  callback: () => void;
+}) => {
   return useComponentModal(CreateNoteModal, props);
 };
 

@@ -5,7 +5,7 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <add-note :data="data" @success="success" />
+    <add-note :data="data" :callback="callback" @success="success" />
   </VueFinalModal>
 </template>
 
@@ -21,6 +21,7 @@ const emit = defineEmits<{
 
 interface Props {
   data: InitialField;
+  callback: () => void;
 }
 defineProps<Props>();
 const success = () => {

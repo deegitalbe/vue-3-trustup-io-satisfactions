@@ -48,7 +48,10 @@ const data: InitialField = {
   related_to_type: "tenant",
   created_by_id: 1,
 };
+const test = () => {
+  return console.log("coucou");
+};
 const toasteo = useToasteo();
-const { open } = useCreateNoteModal({ data });
+const { open } = useCreateNoteModal({ data, callback: test });
 // const updateNoteModal = useUpdateNoteModal({ model });
 </script>
