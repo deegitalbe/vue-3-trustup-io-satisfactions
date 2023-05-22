@@ -46,8 +46,9 @@ import useRatingsForm from "../../composables/useRatingsForm";
 
 const form = useRatingsForm({
   origin: "worksite",
-  createdBy: 1,
-  professionalId: 1,
+  created_by_id: 1,
+  related_to_id: 1,
+  related_to_type: "tenant",
 });
 const reasonRequest = useReasonRequest();
 reasonRequest.fetch({ origin: "worksite" });

@@ -22,7 +22,6 @@ const props = defineProps<{
 }>();
 
 const { selectables } = useSelectableReason(props.reasons);
-console.log(selectables);
 const selected = computed({
   get() {
     return props.formField.value as number;

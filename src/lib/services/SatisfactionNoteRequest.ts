@@ -1,6 +1,7 @@
 import { Loader } from "@henrotaym/helpers";
 import { SatisfactionEndpoint } from "../api/endpoints";
 import { SatisfactionQuery } from "../api/endpoints/Satisfaction";
+import { Satisfaction } from "../types";
 
 export class SatisfactionNoteRequest {
   private _satisfaction?: SatisfactionQuery;
@@ -14,17 +15,17 @@ export class SatisfactionNoteRequest {
 
   public store(query: SatisfactionQuery) {
     console.log(query);
-    // return this._loader.loadTill(async () => {
-    //   const response = await this._endpoint.store(query);
-    //   this._satisfaction = response;
-    // });
+    return this._loader.loadTill(async () => {
+      const response = await this._endpoint.store(query);
+      this._satisfaction = response;
+    });
   }
 
-  // public isReady(): this is {
-  //   satisfactions: TBD;
-  // } {
-  //   return this._satisfaction !== undefined && !this._loader.isLoading;
-  // }
+  public isReady(): this is {
+    satisfactions: Satisfaction;
+  } {
+    return this._satisfaction !== undefined && !this._loader.isLoading;
+  }
 
   public get satisfaction() {
     return this._satisfaction;

@@ -1,22 +1,23 @@
 import { Reactive, Field } from "@henrotaym/vue-3-forms";
 import { RatingFields } from "../../../composables/useRatingsForm";
+import { SatisfactionQuery } from "../../../api/endpoints/Satisfaction";
 export default class StoreSatisfactionFactory {
   private _satisfactionQuery;
 
   constructor(initData) {
     this._satisfactionQuery = {
-      value: "",
-      origin: initData.origin,
+      value: 0,
+      origin: initData.origin as "marketplace" | "worksite",
       text: "",
-      created_by: initData.createdBy,
       is_using: 1,
-      professional_id: initData.professionalId,
+      related_to_id: initData.related_to_id as string,
+      related_to_type: initData.related_to_type as string,
+      created_by_id: initData.created_by_id,
       reason_id: 0,
     };
   }
   create(dirtyFields: Reactive<Partial<RatingFields>>) {
     this.setDirtyFieldValueAsData(dirtyFields);
-    console.log(this.getSatisfactionQuery());
     return this.getSatisfactionQuery();
   }
 
@@ -33,7 +34,7 @@ export default class StoreSatisfactionFactory {
 
   private setRatings(label, field: Field) {
     if (label !== "ratings") return;
-    this.getSatisfactionQuery().value = field.value as string;
+    this.getSatisfactionQuery().value = field.value as number;
   }
 
   private setNoteDetails(label, field: Field) {
@@ -51,7 +52,8 @@ export default class StoreSatisfactionFactory {
     this.getSatisfactionQuery().reason_id = Number(field.value) as number;
   }
 
-  private getSatisfactionQuery() {
+  private getSatisfactionQuery(): SatisfactionQuery {
+    console.log(this._satisfactionQuery.created_by_id);
     return this._satisfactionQuery;
   }
 }

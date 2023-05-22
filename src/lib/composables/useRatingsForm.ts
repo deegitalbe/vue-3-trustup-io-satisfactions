@@ -1,6 +1,7 @@
 import Joi from "joi";
 import { Field, useReactiveForm } from "@henrotaym/vue-3-forms";
 import StoreSatisfactionFactory from "../services/factories/satisfaction/StoreSatisfactionFactory";
+import { SatisfactionNoteRequest } from "../services/SatisfactionNoteRequest";
 
 // SEND DEFAULT PARAMS ON OPEN MODAL (LOADING THIS COMPOSABLE)
 
@@ -45,13 +46,11 @@ const useRatingsForm = (initData) => {
   };
   const form = useReactiveForm(fields);
 
-  // SET A FACTORY WITH DIRTY FIELDS  THAT SET BUILDER AND BUILD CORRECT OBJECT
-
   form.onSubmit(async () => {
     const factory = new StoreSatisfactionFactory(initData);
-    factory.create(form.dirtyFields);
-    // TODO STORE ATTRS BUILDER
-    // satisfactionNoteRequest.store();
+    const query = factory.create(form.dirtyFields);
+    const satisfactionNoteRequest = new SatisfactionNoteRequest();
+    satisfactionNoteRequest.store(query);
   });
 
   return form;
