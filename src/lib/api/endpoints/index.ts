@@ -1,4 +1,4 @@
-import Satisfaction from "./Satisfaction";
+import Satisfaction from "./StoreSatisfaction";
 import Reason from "./Reason";
 
 const api = {

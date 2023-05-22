@@ -11,7 +11,6 @@
         'text-white  bg-blue-500 hover:bg-blue-600': form.isActive,
       }"
     >
-      <h1>{{ form.isLoading }}</h1>
       <span v-if="form.isLoading" class="block animate-bounce">...</span>
       <span v-else>Envoyer</span>
     </button>

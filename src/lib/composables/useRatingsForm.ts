@@ -1,8 +1,7 @@
 import Joi from "joi";
 import { Field, useReactiveForm } from "@henrotaym/vue-3-forms";
-import StoreSatisfactionFactory from "../services/factories/satisfaction/StoreSatisfactionFactory";
-import { SatisfactionNoteRequest } from "../services/SatisfactionNoteRequest";
-import { reactive } from "vue";
+import api from "../api/endpoints/index";
+import { InitialField } from "../components/form/AddNote.vue";
 
 // SEND DEFAULT PARAMS ON OPEN MODAL (LOADING THIS COMPOSABLE)
 
@@ -11,9 +10,15 @@ export type RatingFields = {
   noteDetails: Field<string>;
   isUsing: Field<boolean>;
   reason: Field<number | null>;
+  origin: Field<string>;
+  createdById: Field<number>;
+  relatedToId: Field<number>;
+  relatedToType: Field<string>;
 };
 
-const useRatingsForm = (initData) => {
+export type K = keyof RatingFields;
+
+const useRatingsForm = (initData: InitialField) => {
   const ratings = new Field({
     label: "ratings",
     value: 2,
@@ -38,22 +43,46 @@ const useRatingsForm = (initData) => {
     validation: Joi.number().required(),
   });
 
+  const origin = new Field({
+    label: "origin",
+    value: initData.origin,
+    validation: Joi.string(),
+  });
+
+  const createdById = new Field({
+    label: "created_by_id",
+    value: initData.created_by_id,
+    validation: Joi.number(),
+  });
+
+  const relatedToId = new Field({
+    label: "related_to_id",
+    value: initData.related_to_id,
+    validation: Joi.number(),
+  });
+
+  const relatedToType = new Field({
+    label: "related_to_type",
+    value: initData.related_to_type,
+    validation: Joi.string(),
+  });
+
   // Creating form instance
   const fields: RatingFields = {
     ratings,
     noteDetails,
     isUsing,
     reason,
+    origin,
+    createdById,
+    relatedToId,
+    relatedToType,
   };
   const form = useReactiveForm(fields);
 
   form.onSubmit(async () => {
-    const factory = new StoreSatisfactionFactory(initData);
-    const query = factory.create(form.fields);
-    const satisfactionNoteRequest = reactive(new SatisfactionNoteRequest());
-    const response = satisfactionNoteRequest.store(query);
+    const response = api.satisfaction.store(form.fields);
     if (!response) return;
-    console.log("SHOULD CLEAR");
     form.clear();
   });
 
