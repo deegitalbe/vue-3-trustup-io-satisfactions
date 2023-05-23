@@ -1,8 +1,7 @@
-import SatisfactionClientFactory from "../../services/factories/satisfaction/client/SatisfactionClientFactory";
-import UpdateSatisfactionRequestFactory from "../../services/factories/satisfaction/request/UpdateSatisfactionRequestFactory";
+import SatisfactionClientFactory from "../../factories/satisfaction/client/SatisfactionClientFactory";
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { RatingFields } from "../../composables/useUpdateRatingsForm ";
-import Satisfaction from "../../types/Satisfaction";
+import { SatisfactionFields } from "../../types/FormFields";
+import UpdateSatisfactionRequestFactory from "../../factories/satisfaction/request/UpdateSatisfactionRequestFactory";
 
 class UpdateSatisfactionEndpoint {
   private _requestFactory;
@@ -14,13 +13,13 @@ class UpdateSatisfactionEndpoint {
 
   async update({
     fields,
-    model,
+    uuid,
   }: {
-    fields: Reactive<RatingFields>;
-    model: Satisfaction;
+    fields: Reactive<SatisfactionFields>;
+    uuid: string;
   }) {
     const client = this._clientFactory.create();
-    const request = this._requestFactory.create({ fields, model });
+    const request = this._requestFactory.create({ fields, uuid });
     const response = await client.try(request);
 
     if (response?.failed()) return;

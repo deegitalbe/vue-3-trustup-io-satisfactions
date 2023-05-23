@@ -25,34 +25,18 @@ import "./lib";
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "vue-final-modal";
-import useCreateSatisfaction from "./lib/composables/useCreateSatisfactionModal";
-import { Attributes } from "./lib/composables/useCreateSatisfactionModal";
-import Origin from "./lib/enums/Origin";
-// const model = {
-//   data: {
-//     id: 1,
-//     value: 4,
-//     origin: "worksite",
-//     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae maiores non repudiandae, in, omnis pariatur minima nulla ullam alias itaque qui odio. Repellat et porro doloribus quis tenetur! Ipsam, iusto!",
-//     is_using: true,
-//     reason: { id: 1, title: "7 reasons why", origin: "worksite" },
-//     created_by_id: 1,
-//     date: "2023-05-22T09:49:02.000000Z",
-//     related_to_id: "1",
-//     related_to_type: "tenant",
-//   },
+// import useCreateSatisfaction from "./lib/composables/useCreateSatisfaction";
+// import Origin from "./lib/enums/Origin";
+import useEditSatisfaction from "./lib/composables/useEditSatisfaction";
+
+// const data = {
+//   origin: Origin.WORKSITE,
+//   relatedToId: "1",
+//   relatedToType: "tenant",
+//   createdById: 1,
 // };
 
-const data: Attributes = {
-  origin: Origin.WORKSITE,
-  related_to_id: "1",
-  related_to_type: "tenant",
-  created_by_id: 1,
-};
-
 const toasteo = useToasteo();
-const { open } = useCreateSatisfaction(data);
-
-// onSuccess((note) => console.log(note));
-// const updateNoteModal = useUpdateNoteModal({ model });
+const { open, onSuccess } = useEditSatisfaction("1");
+onSuccess((note) => console.log(note));
 </script>

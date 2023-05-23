@@ -20,6 +20,5 @@
 import { Form } from "@henrotaym/vue-3-forms";
 import { Reactive } from "@henrotaym/vue-3-forms";
 
-const props = defineProps<{ form: Reactive<Form> }>();
-console.log(props.form);
+defineProps<{ form: Reactive<Form> }>();
 </script>

@@ -1,5 +1,5 @@
 import { Client } from "@henrotaym/api-client";
-import SatisfactionCredential from "../../../../api/credentials/SatisfactionCredential";
+import SatisfactionCredential from "../../../api/credentials/SatisfactionCredential";
 
 class SatisfactionClientFactory {
   public create() {

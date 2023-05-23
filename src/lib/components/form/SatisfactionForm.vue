@@ -5,8 +5,8 @@
         v-if="form.fields.isUsing.value === true"
         :is-centered="true"
       >
-        <form-field :form-field="form.fields.ratings" class="items-center">
-          <input-rating :form-field="form.fields.ratings"></input-rating>
+        <form-field :form-field="form.fields.value" class="items-center">
+          <input-rating :form-field="form.fields.value"></input-rating>
         </form-field>
       </row-with-input>
       <row-with-input>
@@ -23,11 +23,8 @@
         ></form-field>
       </row-with-input>
       <row-with-input>
-        <form-field :form-field="form.fields.noteDetails">
-          <text-area
-            label="note details"
-            :form-field="form.fields.noteDetails"
-          />
+        <form-field :form-field="form.fields.text">
+          <text-area label="note details" :form-field="form.fields.text" />
         </form-field>
       </row-with-input>
     </div>
@@ -38,42 +35,18 @@ import InputRating from "../inputs/InputRating.vue";
 import TextArea from "../inputs/TextArea.vue";
 import RowWithInput from "./RowWithInput.vue";
 import CheckBoxes from "../inputs/CheckBoxes.vue";
-import useReasonRequest from "../../composables/useReasonRequest";
 import SelectableInput from "../inputs/SelectablesInput.vue";
 import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
-import useRatingsForm from "../../composables/useRatingsForm";
-import StoreService from "../../services/factories/satisfaction/StoreService";
-import Satisfaction from "../../types/Satisfaction";
-import useUpdateRatingsForm from "../../composables/useUpdateRatingsForm ";
-
-export type InitialField = {
-  origin: string;
-  created_by_id: number;
-  related_to_id: string;
-  related_to_type: string;
-};
+import { Form, Reactive } from "@henrotaym/vue-3-forms";
+import { SatisfactionFields } from "../../types/FormFields";
+import useReasonIndexService from "../../composables/useReasonIndexService";
 
 interface Props {
-  data: InitialField;
-  service: StoreService;
-  model?: Satisfaction;
+  form: Reactive<Form<SatisfactionFields>>;
 }
-
 const props = defineProps<Props>();
-
-const form = props.model
-  ? useUpdateRatingsForm(props.model, props.service)
-  : useRatingsForm(
-      {
-        origin: props.data.origin,
-        created_by_id: props.data.created_by_id,
-        related_to_id: props.data.related_to_id,
-        related_to_type: props.data.related_to_type,
-      },
-      props.service
-    );
-
-const reasonRequest = useReasonRequest();
+console.log(props.form);
+const reasonRequest = useReasonIndexService();
 reasonRequest.fetch({ origin: "worksite" });
 </script>

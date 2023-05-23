@@ -1,4 +1,4 @@
-export interface Satisfaction {
+export interface SatisfactionAttributes {
   data: Data;
 }
 
@@ -21,4 +21,4 @@ export interface Reason {
   origin: string;
 }
 
-export default Satisfaction;
+export default SatisfactionAttributes;

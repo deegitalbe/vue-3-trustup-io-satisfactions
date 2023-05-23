@@ -7,7 +7,7 @@ import {
 } from "../api/endpoints/Reason";
 import Reason from "../models/Reason";
 
-export class ReasonRequest {
+export class ReasonIndexService {
   private _reasons?: Reason[];
   private _endpoint;
   private _loader;

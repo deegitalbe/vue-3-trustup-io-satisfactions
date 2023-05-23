@@ -1,12 +1,12 @@
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { RatingFields } from "../../../../composables/useRatingsForm";
+import { SatisfactionFields } from "../../../types/FormFields";
 
 class SatisfactionRequestDataFactory {
-  public create(fields: Reactive<RatingFields>) {
+  public create(fields: Reactive<SatisfactionFields>) {
     return {
-      value: fields.ratings.value,
+      value: fields.value.value,
       origin: fields.origin.value,
-      text: fields.noteDetails.value,
+      text: fields.text.value,
       created_by_id: fields.createdById.value,
       is_using: fields.isUsing.value === true ? 1 : 0,
       reason_id: Number(fields.reason.value),

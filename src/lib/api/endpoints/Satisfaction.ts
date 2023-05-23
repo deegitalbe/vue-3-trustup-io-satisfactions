@@ -1,8 +1,6 @@
 import { z } from "zod";
 import SatisfactionClientFactory from "../../factories/satisfaction/client/SatisfactionClientFactory";
-import StoreSatisfactionRequestFactory from "../../factories/satisfaction/request/StoreSatisfactionRequestFactory";
-import { Reactive } from "@henrotaym/vue-3-forms";
-import { SatisfactionFields } from "../../types/FormFields";
+import ShowSatisfactionRequestFactory from "../../factories/satisfaction/request/ShowSatisfactionRequestFactory";
 
 const QueryZ = z.object({
   value: z.number().gte(0).lte(5).int(),
@@ -15,22 +13,24 @@ const QueryZ = z.object({
   related_to_id: z.string(),
 });
 export type SatisfactionQuery = z.infer<typeof QueryZ>;
-class StoreSatisfactionEndpoint {
+class Satisfaction {
   private _requestFactory;
   private _clientFactory;
   constructor() {
     this._clientFactory = new SatisfactionClientFactory();
-    this._requestFactory = new StoreSatisfactionRequestFactory();
+    this._requestFactory = new ShowSatisfactionRequestFactory();
   }
 
-  async store(fields: Reactive<SatisfactionFields>) {
+  // TODO PARSE
+  async show(uuid: number) {
     const client = this._clientFactory.create();
-    const request = this._requestFactory.create(fields);
+    const request = this._requestFactory.create(uuid);
     const response = await client.try(request);
-
     if (response?.failed()) return;
+    console.log(response?.response?.get());
+
     return response?.response?.get();
   }
 }
 
-export default StoreSatisfactionEndpoint;
+export default Satisfaction;

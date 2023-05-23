@@ -1,8 +1,9 @@
 import SatisfactionRequestFactory from "./SatisfactionRequestFactory";
 import SatisfactionRequestDataFactory from "./SatisfactionRequestDataFactory";
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { RatingFields } from "../../../../composables/useRatingsForm";
-class StoreSatisfactionRequestFactory {
+import { SatisfactionFields } from "../../../types/FormFields";
+
+class UpdateSatisfactionRequestFactory {
   private _requestFactory;
   private _requestDataFactory;
   public baseUrl: string;
@@ -13,16 +14,23 @@ class StoreSatisfactionRequestFactory {
     this.baseUrl = baseUrl;
   }
 
-  public create(fields: Reactive<RatingFields>) {
+  public create({
+    fields,
+    uuid,
+  }: {
+    fields: Reactive<SatisfactionFields>;
+    uuid: string;
+  }) {
     const request = this._requestFactory.create();
     request
       .setBaseUrl(this.baseUrl)
       .appendToBaseUrl("api/notes")
-      .setVerb("POST");
-    const data = this._requestDataFactory.create(fields);
-    request.addData(data).asForm(true);
+      .setVerb("PATCH");
+    request.addData(this._requestDataFactory.create(fields)).asForm(true);
+    request.setUrl(uuid);
+
     return request;
   }
 }
 
-export default StoreSatisfactionRequestFactory;
+export default UpdateSatisfactionRequestFactory;

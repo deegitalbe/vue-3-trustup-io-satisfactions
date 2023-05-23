@@ -1,34 +1,36 @@
-import Satisfaction from "../../../types/Satisfaction";
-import api from "../../../api/endpoints/index";
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { RatingFields } from "../../../composables/useRatingsForm";
+import { SatisfactionFields } from "../../types/FormFields";
+import api from "../../api/endpoints/index";
+import Satisfaction from "../../models/Satisfaction";
 
 type OnSuccess = (note: Satisfaction) => void;
 
 class StoreService {
-  private _onSuccess?: OnSuccess;
-  public async store(fields: Reactive<RatingFields>) {
+  private _onSuccess?: (note: Satisfaction) => void;
+
+  public async store(fields: Reactive<SatisfactionFields>) {
     // call endpoint then call on succes.
     const response = await api.storeSatisfaction.store(fields);
     if (!response) return;
     this._onSuccess?.(response);
+    return response;
   }
 
   public async update({
     fields,
-    model,
+    uuid,
   }: {
-    fields: Reactive<RatingFields>;
-    model: Satisfaction;
+    fields: Reactive<SatisfactionFields>;
+    uuid: string;
   }) {
     // call endpoint then call on succes.
-    const response = await api.updateSatisfaction.update({ fields, model });
+    const response = await api.updateSatisfaction.update({ fields, uuid });
     if (!response) return;
     this._onSuccess?.(response);
+    return response;
   }
 
   public onSuccess(onSuccess: OnSuccess) {
-    console.log(this._onSuccess);
     this._onSuccess = onSuccess;
   }
 }
