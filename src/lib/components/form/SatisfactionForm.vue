@@ -44,30 +44,23 @@ import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
 import useRatingsForm from "../../composables/useRatingsForm";
 import Satisfaction from "../../types/Satisfaction";
+import {
+  SatisfactionFields,
+  SatisfactionFormBuilder,
+} from "../../composables/useCreateSatisfactionModal";
+import { Form } from "@henrotaym/vue-3-forms";
 
-export type InitialField = {
-  origin: string;
-  created_by_id: number;
-  related_to_id: string;
-  related_to_type: string;
-};
-
+// export type InitialField = {
+//   origin: string;
+//   created_by_id: number;
+//   related_to_id: string;
+//   related_to_type: string;
+// };
 interface Props {
-  data: InitialField;
-  onSuccess: (callback: (note: Satisfaction) => void) => void;
+  form: Form<SatisfactionFields>;
 }
+defineProps<Props>();
 
-const props = defineProps<Props>();
-
-const form = useRatingsForm(
-  {
-    origin: props.data.origin,
-    created_by_id: props.data.created_by_id,
-    related_to_id: props.data.related_to_id,
-    related_to_type: props.data.related_to_type,
-  },
-  props.onSuccess
-);
 const reasonRequest = useReasonRequest();
 reasonRequest.fetch({ origin: "worksite" });
 </script>

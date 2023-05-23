@@ -4,8 +4,9 @@ import CreateNoteModal from "../components/modals/CreateNoteModal.vue";
 import UpdateNoteModal from "../components/modals/UpdateNoteModal.vue";
 import Satisfaction from "../types/Satisfaction";
 import { InitialField } from "../components/form/AddNote.vue";
+import { SatisfactionFormBuilder } from "../composables/useCreateSatisfactionModal";
 
-const useComponentModal = <P extends Record<string, unknown>>(
+export const useComponentModal = <P extends Record<string, unknown>>(
   modalComponent: Constructor,
   props: P
 ) => {
@@ -22,12 +23,14 @@ const useComponentModal = <P extends Record<string, unknown>>(
 };
 
 export const useCreateNoteModal = (props: {
-  data: InitialField;
-  onSuccess: (callback: (note: Satisfaction) => void) => void;
+  builder: SatisfactionFormBuilder;
 }) => {
   return useComponentModal(CreateNoteModal, props);
 };
 
-export const useUpdateNoteModal = (props: { model: Satisfaction }) => {
+export const useUpdateNoteModal = (props: {
+  builder: SatisfactionFormBuilder;
+  uuid: string;
+}) => {
   return useComponentModal(UpdateNoteModal, props);
 };

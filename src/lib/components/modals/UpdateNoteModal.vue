@@ -5,28 +5,39 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <update-note :model="model" @success="success" />
+    <satisfaction-form :form="form" />
+    <!-- <update-note :model="model" @success="success" /> -->
   </VueFinalModal>
 </template>
 
 <script setup lang="ts">
 import { VueFinalModal } from "vue-final-modal";
-import UpdateNote from "../form/UpdateNote.vue";
-import { notify } from "../../composables";
-import Satisfaction from "../../types/Satisfaction";
+// import UpdateNote from "../form/UpdateNote.vue";
+// import { notify } from "../../composables";
+// import Satisfaction from "../../types/Satisfaction";
+import { SatisfactionFormBuilder } from "../../composables/useCreateSatisfactionModal";
+import { Satisfaction } from "../../types";
 
-const emit = defineEmits<{
-  (e: "close"): void;
-}>();
+// const emit = defineEmits<{
+//   (e: "close"): void;
+// }>();
 
 interface Props {
-  model: Satisfaction;
+  builder: SatisfactionFormBuilder;
+  uuid: string;
 }
-defineProps<Props>();
-const success = () => {
-  emit("close");
-  notify.useToasteoSuccess();
-};
+const props = defineProps<Props>();
+
+// use service and endpoint to get satisfaction from received uuid (display a loader while loading)
+// use model to customize builder
+const satisfaction = {} as Satisfaction;
+props.builder.setModel(satisfaction);
+const form = props.builder.build();
+
+// const success = () => {
+//   emit("close");
+//   notify.useToasteoSuccess();
+// };
 </script>
 
 <style></style>

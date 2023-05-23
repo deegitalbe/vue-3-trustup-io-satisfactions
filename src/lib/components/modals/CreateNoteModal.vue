@@ -5,7 +5,7 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <add-note :data="data" :on-success="onSuccess" @close="close" />
+    <satisfaction-form :form="form" />
   </VueFinalModal>
 </template>
 
@@ -15,16 +15,19 @@ import AddNote from "../form/AddNote.vue";
 import { notify } from "../../composables";
 import { InitialField } from "../form/AddNote.vue";
 import Satisfaction from "../../types/Satisfaction";
+import { SatisfactionFormBuilder } from "../../composables/useCreateSatisfactionModal";
 
 const emit = defineEmits<{
   (e: "close"): void;
 }>();
 
 interface Props {
-  data: InitialField;
-  onSuccess: (callback: (note: Satisfaction) => void) => void;
+  builder: SatisfactionFormBuilder;
 }
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const form = props.builder.build();
+
 const close = () => {
   emit("close");
   notify.useToasteoSuccess();
