@@ -23,13 +23,16 @@ export class SatisfactionFormBuilder {
     this._onSuccess = onSuccess;
   }
 
-  public setModel(satisfaction) {
+  public setModel(satisfaction: Satisfaction) {
     console.log(satisfaction);
     this.setIsUsing(satisfaction.isUsing)
       .setValue(satisfaction.value)
       .setOrigin(satisfaction.origin)
       .setText(satisfaction.text)
-      .setReason(satisfaction.reason);
+      .setReason(satisfaction.reason)
+      .setCreatedById(satisfaction.createdBy)
+      .setRelatedToId(satisfaction.relatedToId)
+      .setRelatedToType(satisfaction.relatedToType);
   }
 
   public setOrigin(origin: Origin) {

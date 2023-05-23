@@ -15,7 +15,7 @@ export const useEditSatisfaction = (uuid: string) => {
   const service = new StoreService();
 
   builder.onSubmit(async (form) => {
-    const response = await service.store(form.fields);
+    const response = await service.update({ fields: form.fields, uuid });
     close();
     return response;
   });
