@@ -2,6 +2,7 @@ import Joi from "joi";
 import { Field, useReactiveForm } from "@henrotaym/vue-3-forms";
 import api from "../api/endpoints/index";
 import { InitialField } from "../components/form/AddNote.vue";
+import Satisfaction from "../types/Satisfaction";
 
 // SEND DEFAULT PARAMS ON OPEN MODAL (LOADING THIS COMPOSABLE)
 
@@ -18,7 +19,7 @@ export type RatingFields = {
 
 export type K = keyof RatingFields;
 
-const useRatingsForm = (initData: InitialField) => {
+const useRatingsForm = (initData: InitialField, callback) => {
   const ratings = new Field({
     label: "ratings",
     value: 2,
@@ -80,9 +81,14 @@ const useRatingsForm = (initData: InitialField) => {
   };
   const form = useReactiveForm(fields);
 
+  const onSuccess = (response: Satisfaction) => {
+    return { note: response };
+  };
+
   form.onSubmit(async () => {
-    const response = api.storeSatisfaction.store(form.fields);
+    const response = await api.storeSatisfaction.store(form.fields);
     if (!response) return;
+    callback(onSuccess(response));
     form.clear();
   });
 

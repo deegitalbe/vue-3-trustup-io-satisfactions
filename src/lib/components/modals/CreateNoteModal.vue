@@ -5,7 +5,7 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <add-note :data="data" :callback="callback" @success="success" />
+    <add-note :data="data" :on-success="onSuccess" @close="close" />
   </VueFinalModal>
 </template>
 
@@ -14,6 +14,7 @@ import { VueFinalModal } from "vue-final-modal";
 import AddNote from "../form/AddNote.vue";
 import { notify } from "../../composables";
 import { InitialField } from "../form/AddNote.vue";
+import Satisfaction from "../../types/Satisfaction";
 
 const emit = defineEmits<{
   (e: "close"): void;
@@ -21,10 +22,10 @@ const emit = defineEmits<{
 
 interface Props {
   data: InitialField;
-  callback: () => void;
+  onSuccess: (callback: (note: Satisfaction) => void) => void;
 }
 defineProps<Props>();
-const success = () => {
+const close = () => {
   emit("close");
   notify.useToasteoSuccess();
 };

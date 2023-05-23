@@ -16,7 +16,6 @@ const useComponentModal = <P extends Record<string, unknown>>(
       onClose() {
         instance.close();
       },
-      // onSuccess: (callback: (rating: Rating) => void),
     },
   });
   return instance;
@@ -24,7 +23,7 @@ const useComponentModal = <P extends Record<string, unknown>>(
 
 export const useCreateNoteModal = (props: {
   data: InitialField;
-  callback: () => void;
+  onSuccess: (callback: (note: Satisfaction) => void) => void;
 }) => {
   return useComponentModal(CreateNoteModal, props);
 };
