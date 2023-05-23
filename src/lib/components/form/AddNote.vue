@@ -43,7 +43,9 @@ import SelectableInput from "../inputs/SelectablesInput.vue";
 import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
 import useRatingsForm from "../../composables/useRatingsForm";
+import StoreService from "../../services/factories/satisfaction/StoreService";
 import Satisfaction from "../../types/Satisfaction";
+import useUpdateRatingsForm from "../../composables/useUpdateRatingsForm ";
 
 export type InitialField = {
   origin: string;
@@ -54,20 +56,24 @@ export type InitialField = {
 
 interface Props {
   data: InitialField;
-  onSuccess: (callback: (note: Satisfaction) => void) => void;
+  service: StoreService;
+  model?: Satisfaction;
 }
 
 const props = defineProps<Props>();
 
-const form = useRatingsForm(
-  {
-    origin: props.data.origin,
-    created_by_id: props.data.created_by_id,
-    related_to_id: props.data.related_to_id,
-    related_to_type: props.data.related_to_type,
-  },
-  props.onSuccess
-);
+const form = props.model
+  ? useUpdateRatingsForm(props.model, props.service)
+  : useRatingsForm(
+      {
+        origin: props.data.origin,
+        created_by_id: props.data.created_by_id,
+        related_to_id: props.data.related_to_id,
+        related_to_type: props.data.related_to_type,
+      },
+      props.service
+    );
+
 const reasonRequest = useReasonRequest();
 reasonRequest.fetch({ origin: "worksite" });
 </script>

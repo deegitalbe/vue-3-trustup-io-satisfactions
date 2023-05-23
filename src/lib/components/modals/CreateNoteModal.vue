@@ -5,7 +5,7 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <add-note :data="data" :on-success="onSuccess" @close="close" />
+    <add-note :data="data" :service="service" :model="model" @close="close" />
   </VueFinalModal>
 </template>
 
@@ -14,6 +14,7 @@ import { VueFinalModal } from "vue-final-modal";
 import AddNote from "../form/AddNote.vue";
 import { notify } from "../../composables";
 import { InitialField } from "../form/AddNote.vue";
+import StoreService from "../../services/factories/satisfaction/StoreService";
 import Satisfaction from "../../types/Satisfaction";
 
 const emit = defineEmits<{
@@ -22,7 +23,8 @@ const emit = defineEmits<{
 
 interface Props {
   data: InitialField;
-  onSuccess: (callback: (note: Satisfaction) => void) => void;
+  service: StoreService;
+  model?: Satisfaction;
 }
 defineProps<Props>();
 const close = () => {

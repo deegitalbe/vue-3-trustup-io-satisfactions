@@ -1,7 +1,7 @@
 import Joi from "joi";
 import { Field, useReactiveForm } from "@henrotaym/vue-3-forms";
-import api from "../api/endpoints/index";
 import { Satisfaction } from "../types/Satisfaction";
+import StoreService from "../services/factories/satisfaction/StoreService";
 
 // SEND DEFAULT PARAMS ON OPEN MODAL (LOADING THIS COMPOSABLE)
 
@@ -18,7 +18,7 @@ export type RatingFields = {
 
 export type K = keyof RatingFields;
 
-const useUpdateRatingsForm = (model: Satisfaction) => {
+const useUpdateRatingsForm = (model: Satisfaction, service: StoreService) => {
   const ratings = new Field({
     label: "ratings",
     value: model?.data.value,
@@ -81,9 +81,7 @@ const useUpdateRatingsForm = (model: Satisfaction) => {
   const form = useReactiveForm(fields);
 
   form.onSubmit(async () => {
-    if (!model) return;
-    const response = api.updateSatisfaction.update({ fields, model });
-    if (!response) return;
+    service.update({ fields, model });
     form.clear();
   });
 

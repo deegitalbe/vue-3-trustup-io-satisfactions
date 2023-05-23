@@ -24,9 +24,10 @@
 import "./lib";
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
-import { useCreateNoteModal } from "./lib/utils/emitter";
 import { ModalsContainer } from "vue-final-modal";
-import { InitialField } from "./lib/components/form/AddNote.vue";
+import useCreateSatisfaction from "./lib/composables/useCreateSatisfactionModal";
+import { Attributes } from "./lib/composables/useCreateSatisfactionModal";
+import Origin from "./lib/enums/Origin";
 // const model = {
 //   data: {
 //     id: 1,
@@ -42,17 +43,16 @@ import { InitialField } from "./lib/components/form/AddNote.vue";
 //   },
 // };
 
-const data: InitialField = {
-  origin: "worksite",
+const data: Attributes = {
+  origin: Origin.WORKSITE,
   related_to_id: "1",
   related_to_type: "tenant",
   created_by_id: 1,
 };
 
 const toasteo = useToasteo();
-const { open } = useCreateNoteModal({
-  data,
-  onSuccess: (note) => console.log(note),
-});
+const { open } = useCreateSatisfaction(data);
+
+// onSuccess((note) => console.log(note));
 // const updateNoteModal = useUpdateNoteModal({ model });
 </script>

@@ -1,5 +1,5 @@
 enum Origin {
-  WORKSITE = "worsksite",
+  WORKSITE = "worksite",
   MARKETPLACE = "marketplace",
 }
 

@@ -1,9 +1,9 @@
 import { useModal } from "vue-final-modal";
 import type { Constructor } from "vue-final-modal";
 import CreateNoteModal from "../components/modals/CreateNoteModal.vue";
-import UpdateNoteModal from "../components/modals/UpdateNoteModal.vue";
 import Satisfaction from "../types/Satisfaction";
 import { InitialField } from "../components/form/AddNote.vue";
+import StoreService from "../services/factories/satisfaction/StoreService";
 
 const useComponentModal = <P extends Record<string, unknown>>(
   modalComponent: Constructor,
@@ -23,11 +23,8 @@ const useComponentModal = <P extends Record<string, unknown>>(
 
 export const useCreateNoteModal = (props: {
   data: InitialField;
-  onSuccess: (callback: (note: Satisfaction) => void) => void;
+  model?: Satisfaction;
+  service: StoreService;
 }) => {
   return useComponentModal(CreateNoteModal, props);
-};
-
-export const useUpdateNoteModal = (props: { model: Satisfaction }) => {
-  return useComponentModal(UpdateNoteModal, props);
 };
