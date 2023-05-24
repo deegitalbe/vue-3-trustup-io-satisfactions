@@ -250,6 +250,13 @@
     vue "^3.2.47"
     vue-i18n "9"
 
+"@deegital/vue-3-trustup-io-loader@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@deegital/vue-3-trustup-io-loader/-/vue-3-trustup-io-loader-0.0.8.tgz#819516fa556e4f5b936c44d98cb52a266e7a508f"
+  integrity sha512-jEU6M94NrYXNnoDQlAA/tI5kp/HuyinqnDeQ81vMW2ESDXn+PwF19j/TvFeJHIvxFpYTSlF46s2zOMujPUXrOg==
+  dependencies:
+    vue "^3.2.47"
+
 "@deegital/vue-trustup-io-toasteo@^1.1.9":
   version "1.1.9"
   resolved "https://registry.yarnpkg.com/@deegital/vue-trustup-io-toasteo/-/vue-trustup-io-toasteo-1.1.9.tgz#f949c70d4a128d44be9053e3125a3076c0cd05d3"

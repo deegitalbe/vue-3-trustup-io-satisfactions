@@ -6,12 +6,20 @@
     content-transition="vfm-fade"
   >
     <satisfaction-form v-if="service.isReady()" :form="service.form" />
-    <h1 v-else>LOOOOOOOOAAAAAADDDD</h1>
+    <AppLoader
+      v-else
+      :is-full-page="false"
+      first-circle-color="#5980e3"
+      second-circle-color="#a6baed"
+      third-circle-color="#1B4CCA"
+    />
     <!-- <update-note :model="model" @success="success" /> -->
   </VueFinalModal>
 </template>
 
 <script setup lang="ts">
+import { AppLoader } from "@deegital/vue-3-trustup-io-loader";
+
 import { VueFinalModal } from "vue-final-modal";
 import SatisfactionForm from "../form/SatisfactionForm.vue";
 import SatisfactionFormBuilder from "../../builders/satisfaction/form/SatisfactionFormBuilder";
