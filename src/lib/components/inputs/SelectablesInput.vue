@@ -5,7 +5,6 @@
     track-by="id"
     title="Select a reason"
     :form-field="formField"
-    @input="formField.validator.resetValidation"
     @blur="formField.validator.validate"
   ></select-common>
 </template>

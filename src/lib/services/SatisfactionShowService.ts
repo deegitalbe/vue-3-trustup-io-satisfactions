@@ -3,17 +3,14 @@ import { SatisfactionEndpoint } from "../api/endpoints";
 import Satisfaction from "../models/Satisfaction";
 import SatisfactionAttributes from "../types/Satisfaction";
 import { reactive } from "vue";
-import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 
 export class SatisfactionShowService {
   private _satisfaction!: Satisfaction;
   private _endpoint;
   private _loader;
-  public builder;
-  constructor(builder: SatisfactionFormBuilder) {
+  constructor() {
     this._endpoint = new SatisfactionEndpoint();
     this._loader = reactive(new Loader(false));
-    this.builder = builder;
   }
 
   public async fetch(uuid: number) {
@@ -23,7 +20,7 @@ export class SatisfactionShowService {
       this.setSatisfactionModel(response);
       return response;
     });
-    if (response && this.isReady()) this.setForm();
+    if (response && this.isReady()) return response;
   }
 
   public setSatisfactionModel(response: SatisfactionAttributes) {
@@ -46,12 +43,5 @@ export class SatisfactionShowService {
 
   public get satisfaction() {
     return this._satisfaction;
-  }
-
-  private setForm() {
-    this.builder.setModel(this.satisfaction);
-  }
-  public get form() {
-    return this.builder.build();
   }
 }

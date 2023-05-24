@@ -5,7 +5,10 @@
     overlay-transition="vfm-fade"
     content-transition="vfm-fade"
   >
-    <satisfaction-form v-if="service.isReady()" :form="service.form" />
+    <satisfaction-form
+      v-if="satisfactionEditService.service.isReady()"
+      :form="satisfactionEditService.form"
+    />
     <AppLoader
       v-else
       :is-full-page="false"
@@ -23,12 +26,7 @@ import { AppLoader } from "@deegital/vue-3-trustup-io-loader";
 import { VueFinalModal } from "vue-final-modal";
 import SatisfactionForm from "../form/SatisfactionForm.vue";
 import SatisfactionFormBuilder from "../../builders/satisfaction/form/SatisfactionFormBuilder";
-// import { notify } from "../../composables";
-import useSatisfactionShowService from "../../composables/useSatisfactionShowService";
-
-// const emit = defineEmits<{
-//   (e: "close"): void;
-// }>();
+import useSatisfactionEditService from "../../composables/useSatisfactionEditService";
 
 interface Props {
   builder: SatisfactionFormBuilder;
@@ -36,12 +34,15 @@ interface Props {
 }
 const props = defineProps<Props>();
 
-// use service and endpoint to get satisfaction from received uuid (display a loader while loading)
-// use model to customize builder
-const service = useSatisfactionShowService(props.builder);
+const satisfactionEditService = useSatisfactionEditService(
+  props.builder,
+  props.uuid
+);
+const init = async () => {
+  await satisfactionEditService.setForm();
+};
 
-service.fetch(Number(props.uuid));
-console.log(service.builder, service.form);
+init();
 </script>
 
 <style></style>

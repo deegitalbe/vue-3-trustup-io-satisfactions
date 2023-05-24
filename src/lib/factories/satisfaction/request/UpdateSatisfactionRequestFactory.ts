@@ -2,6 +2,7 @@ import SatisfactionRequestFactory from "./SatisfactionRequestFactory";
 import SatisfactionRequestDataFactory from "./SatisfactionRequestDataFactory";
 import { Reactive } from "@henrotaym/vue-3-forms";
 import { SatisfactionFields } from "../../../types/FormFields";
+import { ApiRequestData } from "@henrotaym/api-client/dist/types/requests";
 
 class UpdateSatisfactionRequestFactory {
   private _requestFactory;
@@ -26,7 +27,9 @@ class UpdateSatisfactionRequestFactory {
       .setBaseUrl(this.baseUrl)
       .appendToBaseUrl("api/notes")
       .setVerb("PATCH");
-    request.addData(this._requestDataFactory.create(fields)).asForm(true);
+    request
+      .addData(this._requestDataFactory.create(fields) as ApiRequestData)
+      .asForm(true);
     request.setUrl(uuid);
 
     return request;
