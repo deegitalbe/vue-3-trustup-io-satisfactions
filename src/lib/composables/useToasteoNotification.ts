@@ -2,7 +2,7 @@ import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 
 const toasteo = useToasteo();
 
-const useToasteoSuccess = (
+export const useToasteoSuccess = (
   title: string | undefined = "Vos modifications ont bien été enregistrées"
 ) => {
   toasteo.success({
@@ -12,7 +12,7 @@ const useToasteoSuccess = (
   });
 };
 
-const useToasteoError = (
+export const useToasteoError = (
   title: string | undefined = "Something went wrong!",
   text: string | undefined = "There was an error with your last action."
 ) => {
@@ -23,5 +23,3 @@ const useToasteoError = (
     showUndo: true,
   });
 };
-
-export default { useToasteoSuccess, useToasteoError };

@@ -1,7 +1,8 @@
 import SatisfactionRequestFactory from "./SatisfactionRequestFactory";
 import SatisfactionRequestDataFactory from "./SatisfactionRequestDataFactory";
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { SatisfactionFields } from "../../../types/FormFields";
+import { SatisfactionFields } from "../../../types";
+import { ApiRequestData } from "@henrotaym/api-client/dist/types/requests";
 class StoreSatisfactionRequestFactory {
   private _requestFactory;
   private _requestDataFactory;
@@ -20,7 +21,7 @@ class StoreSatisfactionRequestFactory {
       .appendToBaseUrl("api/notes")
       .setVerb("POST");
     const data = this._requestDataFactory.create(fields);
-    request.addData(data).asForm(true);
+    request.addData(data as ApiRequestData).asForm(true);
     return request;
   }
 }

@@ -1,7 +1,7 @@
 import SatisfactionRequestFactory from "./SatisfactionRequestFactory";
 import SatisfactionRequestDataFactory from "./SatisfactionRequestDataFactory";
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { SatisfactionFields } from "../../../types/FormFields";
+import { SatisfactionFields } from "../../../types";
 import { ApiRequestData } from "@henrotaym/api-client/dist/types/requests";
 
 class UpdateSatisfactionRequestFactory {

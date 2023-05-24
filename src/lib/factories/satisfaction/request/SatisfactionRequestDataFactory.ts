@@ -1,5 +1,5 @@
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { SatisfactionFields } from "../../../types/FormFields";
+import { SatisfactionFields } from "../../../types";
 
 class SatisfactionRequestDataFactory {
   public create(fields: Reactive<SatisfactionFields>) {

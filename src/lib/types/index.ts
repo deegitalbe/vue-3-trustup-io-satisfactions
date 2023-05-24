@@ -1,1 +1,2 @@
-export { type Satisfaction } from "./Satisfaction";
+export { type SatisfactionAttributes } from "./SatisfactionAttributes";
+export { type SatisfactionFields } from "./SatisfactionFields";

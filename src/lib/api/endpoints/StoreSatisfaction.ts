@@ -2,7 +2,7 @@ import { z } from "zod";
 import SatisfactionClientFactory from "../../factories/satisfaction/client/SatisfactionClientFactory";
 import StoreSatisfactionRequestFactory from "../../factories/satisfaction/request/StoreSatisfactionRequestFactory";
 import { Reactive } from "@henrotaym/vue-3-forms";
-import { SatisfactionFields } from "../../types/FormFields";
+import { SatisfactionFields } from "../../types";
 
 const QueryZ = z.object({
   value: z.number().gte(0).lte(5).int(),

@@ -1,1 +1,2 @@
-export { default as SatisfactionClientFactory } from "./SatisfactionClientFactory";
+import SatisfactionClientFactory from "./SatisfactionClientFactory";
+export default { SatisfactionClientFactory };

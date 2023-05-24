@@ -1,8 +1,8 @@
 import { Loader } from "@henrotaym/helpers";
 import { SatisfactionEndpoint } from "../api/endpoints";
 import Satisfaction from "../models/Satisfaction";
-import SatisfactionAttributes from "../types/Satisfaction";
 import { reactive } from "vue";
+import { SatisfactionAttributes } from "../types";
 
 export class SatisfactionShowService {
   private _satisfaction!: Satisfaction;

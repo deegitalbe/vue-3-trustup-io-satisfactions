@@ -39,7 +39,7 @@ import SelectableInput from "../inputs/SelectablesInput.vue";
 import FormContainer from "./FormContainer.vue";
 import FormField from "./FormField.vue";
 import { Form, Reactive } from "@henrotaym/vue-3-forms";
-import { SatisfactionFields } from "../../types/FormFields";
+import { SatisfactionFields } from "../../types";
 import useReasonIndexService from "../../composables/useReasonIndexService";
 
 interface Props {

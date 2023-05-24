@@ -1,1 +1,1 @@
-// export { default as satisfactionPlugin } from "./SatisfactionPlugin";
+export { default as satisfactionPlugin } from "./SatisfactionPlugin";

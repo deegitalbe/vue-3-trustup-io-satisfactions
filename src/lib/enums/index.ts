@@ -1,1 +1,2 @@
-export { default as Origin } from "./Origin";
+import Origin from "./Origin";
+export default { Origin };

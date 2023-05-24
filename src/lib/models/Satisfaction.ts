@@ -1,5 +1,5 @@
 import Origin from "../enums/Origin";
-import SatisfactionAttributes from "../types/Satisfaction";
+import { SatisfactionAttributes } from "../types";
 export default class Satisfaction {
   private _id;
   private _value;

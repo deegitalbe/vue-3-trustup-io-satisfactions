@@ -1,8 +1,8 @@
 import { Field, Form, useReactiveForm } from "@henrotaym/vue-3-forms";
 import Joi from "joi";
-import { Origin } from "../../../enums";
 import Satisfaction from "../../../models/Satisfaction";
-import { SatisfactionFields } from "../../../types/FormFields";
+import { SatisfactionFields } from "../../../types";
+import Origin from "../../../enums/Origin";
 
 type OnSuccess = (satisfaction: Satisfaction) => void;
 type OnSubmit = (form: Form<SatisfactionFields>) => Promise<Satisfaction>;

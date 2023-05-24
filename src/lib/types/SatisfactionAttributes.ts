@@ -2,7 +2,7 @@ export interface SatisfactionAttributes {
   data: Data;
 }
 
-export interface Data {
+interface Data {
   id: number;
   value: number;
   origin: string;
@@ -15,10 +15,8 @@ export interface Data {
   related_to_type: string;
 }
 
-export interface Reason {
+interface Reason {
   id: number;
   title: string;
   origin: string;
 }
-
-export default SatisfactionAttributes;

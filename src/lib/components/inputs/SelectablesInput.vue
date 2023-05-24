@@ -9,11 +9,11 @@
   ></select-common>
 </template>
 <script lang="ts" setup>
-import { useSelectableReason } from "../../composables/useReasonSelectables";
 import Reason from "../../models/Reason";
 import SelectCommon from "./SelectCommon.vue";
 import { computed } from "vue";
 import { Reactive, Field } from "@henrotaym/vue-3-forms";
+import { useSelectableReason } from "../../composables/useSelectableReason";
 
 const props = defineProps<{
   reasons: Array<Reason>;
