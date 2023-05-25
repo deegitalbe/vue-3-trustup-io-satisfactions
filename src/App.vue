@@ -24,17 +24,8 @@
 import "./lib";
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
-import { ModalsContainer } from "vue-final-modal";
-// import useCreateSatisfaction from "./lib/composables/useCreateSatisfaction";
-// import Origin from "./lib/enums/Origin";
-import useEditSatisfaction from "./lib/composables/useEditSatisfaction";
-
-// const data = {
-//   origin: Origin.WORKSITE,
-//   relatedToId: "1",
-//   relatedToType: "tenant",
-//   createdById: 1,
-// };
+import { ModalsContainer } from "@deegital/vue3-trustup-io-vue-final-modal";
+import { useEditSatisfaction } from "./lib";
 
 const toasteo = useToasteo();
 const { open, onSuccess } = useEditSatisfaction("1");

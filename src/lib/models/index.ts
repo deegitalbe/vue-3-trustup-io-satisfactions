@@ -1,4 +1,2 @@
-import Reason from "./Reason";
-import Satisfaction from "./Satisfaction";
-
-export { Reason, Satisfaction };
+export { default as Reason } from "./Reason";
+export { default as Satisfaction } from "./Satisfaction";

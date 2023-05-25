@@ -27,7 +27,6 @@ class Satisfaction {
     const request = this._requestFactory.create(uuid);
     const response = await client.try(request);
     if (response?.failed()) return;
-    console.log(response?.response?.get());
 
     return response?.response?.get();
   }

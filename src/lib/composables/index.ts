@@ -1,20 +1,9 @@
-import useReasonIndexService from "./useReasonIndexService";
-import useSelectables from "./useSelectables";
-import useCreateSatisfaction from "./useCreateSatisfaction";
-import useEditSatisfaction from "./useEditSatisfaction";
-import useSatisfactionEditService from "./useSatisfactionEditService";
-import useSatisfactionShowService from "./useSatisfactionShowService";
-import { useSelectableReason } from "./useSelectableReason";
-import { useToasteoSuccess, useToasteoError } from "./useToasteoNotification";
-
-export default {
-  useReasonIndexService,
-  useSelectables,
-  useCreateSatisfaction,
-  useEditSatisfaction,
-  useSelectableReason,
-  useSatisfactionEditService,
-  useSatisfactionShowService,
-  useToasteoSuccess,
-  useToasteoError,
-};
+export { default as useReasonIndexService } from "./useReasonIndexService";
+export { default as useSelectables } from "./useSelectables";
+export { default as useCreateSatisfaction } from "./useCreateSatisfaction";
+export { default as useEditSatisfaction } from "./useEditSatisfaction";
+export { default as useSatisfactionEditService } from "./useSatisfactionEditService";
+export { default as useSatisfactionShowService } from "./useSatisfactionShowService";
+export { default as useSelectableReason } from "./useSelectableReason";
+export { default as useToasteoSuccess } from "./useToasteoNotification";
+export { default as useToasteoError } from "./useToasteoNotification";

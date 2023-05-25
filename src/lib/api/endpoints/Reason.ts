@@ -43,7 +43,6 @@ class Reason {
     const response = await this._client.try(request);
 
     if (response?.failed()) return;
-    console.log(response?.response?.get());
 
     return ResponseSchema.parse(response?.response?.get());
   }

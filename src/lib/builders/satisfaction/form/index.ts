@@ -1,3 +1,1 @@
-import SatisfactionFormBuilder from "./SatisfactionFormBuilder";
-
-export default SatisfactionFormBuilder;
+export { default as SatisfactionFormBuilder } from "./SatisfactionFormBuilder";

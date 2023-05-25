@@ -13,8 +13,7 @@ import Reason from "../../models/Reason";
 import SelectCommon from "./SelectCommon.vue";
 import { computed } from "vue";
 import { Reactive, Field } from "@henrotaym/vue-3-forms";
-import { useSelectableReason } from "../../composables/useSelectableReason";
-
+import { useSelectableReason } from "../../composables";
 const props = defineProps<{
   reasons: Array<Reason>;
   formField: Reactive<Field>;

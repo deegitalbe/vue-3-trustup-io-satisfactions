@@ -45,8 +45,7 @@ import useReasonIndexService from "../../composables/useReasonIndexService";
 interface Props {
   form: Reactive<Form<SatisfactionFields>>;
 }
-const props = defineProps<Props>();
-console.log(props.form);
+defineProps<Props>();
 const reasonRequest = useReasonIndexService();
 reasonRequest.fetch({ origin: "worksite" });
 </script>

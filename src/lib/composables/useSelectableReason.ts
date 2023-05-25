@@ -2,7 +2,7 @@ import { computed } from "vue";
 import Selectables from "./useSelectables";
 import Reason from "../models/Reason";
 
-export const useSelectableReason = (reasons: Reason[]) => {
+const useSelectableReason = (reasons: Reason[]) => {
   const selectables = computed(() => {
     return Selectables.useSelectable(reasons, (element: Reason) => ({
       id: element.id.toString(),
@@ -12,3 +12,4 @@ export const useSelectableReason = (reasons: Reason[]) => {
   });
   return { selectables };
 };
+export default useSelectableReason;

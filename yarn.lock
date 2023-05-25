@@ -264,6 +264,14 @@
   dependencies:
     vue "^3.2.47"
 
+"@deegital/vue3-trustup-io-vue-final-modal@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@deegital/vue3-trustup-io-vue-final-modal/-/vue3-trustup-io-vue-final-modal-0.2.2.tgz#d68a017912bc95595c5062419a44a0e0d9ea6485"
+  integrity sha512-QpwKUOoyfUGkN4l8aHR0HkYBkv4CZzwUdjSRofYVvQ2FfPkC49hnjCfpOXGh8t99pzGIgAw+v/WBZsMUwQCFgw==
+  dependencies:
+    vue "^3.2.47"
+    vue-final-modal "^4.4.2"
+
 "@esbuild/android-arm64@0.17.19":
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.17.19.tgz#bafb75234a5d3d1b690e7c2956a599345e84a2fd"
@@ -1878,9 +1886,9 @@ flatted@^3.1.0:
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
 focus-trap@^7.4.0:
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-7.4.1.tgz#321cd8313c75f6c22ed3c472e04b913e5ee2eb5a"
-  integrity sha512-rnXP5ERIjlo1gEZp7hQb4ekYqUxRuSDQeyWvxhahH3/GkWtd8h8g1C8Eu/KGpuvbUWNVeogK0kuzzrM4u2Z9jA==
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-7.4.3.tgz#a3dae73d44df359eb92bbf37b18e173e813b16c5"
+  integrity sha512-BgSSbK4GPnS2VbtZ50VtOv1Sti6DIkj3+LkVjiWMNjLeAp1SH1UlLx3ULu/DCu4vq5R4/uvTm+zrvsMsuYmGLg==
   dependencies:
     tabbable "^6.1.2"
 
@@ -3618,7 +3626,12 @@ vite@^4.3.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vue-demi@*, vue-demi@>=0.14.0:
+vue-demi@*:
+  version "0.14.5"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.5.tgz#676d0463d1a1266d5ab5cba932e043d8f5f2fbd9"
+  integrity sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==
+
+vue-demi@>=0.14.0:
   version "0.14.1"
   resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.1.tgz#1ed9af03a27642762bfed83d8750805302d0398d"
   integrity sha512-rt+yuCtXvscYot9SQQj3WKZJVSriPNqVkpVBNEHPzSgBv7QIYzsS410VqVgvx8f9AAPgjg+XPKvmV3vOqqkJQQ==

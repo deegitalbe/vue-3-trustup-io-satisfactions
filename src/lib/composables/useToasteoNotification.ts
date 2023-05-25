@@ -23,3 +23,4 @@ export const useToasteoError = (
     showUndo: true,
   });
 };
+export default { useToasteoSuccess, useToasteoError };

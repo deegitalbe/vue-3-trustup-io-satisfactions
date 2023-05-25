@@ -24,7 +24,6 @@ export class SatisfactionFormBuilder {
   }
 
   public setModel(satisfaction: Satisfaction) {
-    console.log(satisfaction);
     this.setIsUsing(satisfaction.isUsing)
       .setValue(satisfaction.value)
       .setOrigin(satisfaction.origin)
