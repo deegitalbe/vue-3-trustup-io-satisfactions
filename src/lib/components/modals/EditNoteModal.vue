@@ -1,10 +1,5 @@
 <template>
-  <VueFinalModal
-    class="confirm-modal"
-    content-class="confirm-modal-content"
-    overlay-transition="vfm-fade"
-    content-transition="vfm-fade"
-  >
+  <CenteredModal>
     <satisfaction-form
       v-if="satisfactionEditService.service.isReady()"
       :form="satisfactionEditService.form"
@@ -17,13 +12,14 @@
       third-circle-color="#1B4CCA"
     />
     <!-- <update-note :model="model" @success="success" /> -->
-  </VueFinalModal>
+  </CenteredModal>
 </template>
 
 <script setup lang="ts">
+import { CenteredModal } from "@deegital/vue3-trustup-io-vue-final-modal";
+
 import { AppLoader } from "@deegital/vue-3-trustup-io-loader";
 
-import { VueFinalModal } from "vue-final-modal";
 import SatisfactionForm from "../form/SatisfactionForm.vue";
 import SatisfactionFormBuilder from "../../builders/satisfaction/form/SatisfactionFormBuilder";
 import useSatisfactionEditService from "../../composables/useSatisfactionEditService";

@@ -1,5 +1,5 @@
 import CreateNoteModal from "../components/modals/CreateNoteModal.vue";
-import { useComponentModal } from "../utils/emitter";
+import { useModal } from "@deegital/vue3-trustup-io-vue-final-modal";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 import StoreService from "../factories/satisfaction/StoreService";
 import { reactive } from "vue";
@@ -26,7 +26,7 @@ export const useCreateSatisfaction = ({
 
   builder.onSubmit(async (form) => await service.store(form.fields));
 
-  const { open, close } = useComponentModal(CreateNoteModal, { builder });
+  const { open, close } = useModal(CreateNoteModal, { builder });
   return { open, close, onSuccess: builder.onSuccess.bind(builder) };
 };
 

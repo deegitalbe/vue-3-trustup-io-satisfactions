@@ -4,7 +4,7 @@ import Satisfaction from "../models/Satisfaction";
 import { reactive } from "vue";
 import { SatisfactionAttributes } from "../types";
 
-export class SatisfactionShowService {
+class SatisfactionShowService {
   private _satisfaction!: Satisfaction;
   private _endpoint;
   private _loader;
@@ -24,7 +24,6 @@ export class SatisfactionShowService {
   }
 
   public setSatisfactionModel(response: SatisfactionAttributes) {
-    console.log(response);
     this._satisfaction = new Satisfaction(response);
   }
 
@@ -45,3 +44,4 @@ export class SatisfactionShowService {
     return this._satisfaction;
   }
 }
+export default SatisfactionShowService;

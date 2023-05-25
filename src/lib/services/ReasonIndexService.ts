@@ -7,7 +7,7 @@ import {
 } from "../api/endpoints/Reason";
 import Reason from "../models/Reason";
 
-export class ReasonIndexService {
+class ReasonIndexService {
   private _reasons?: Reason[];
   private _endpoint;
   private _loader;
@@ -50,3 +50,4 @@ export class ReasonIndexService {
     return this._reasons;
   }
 }
+export default ReasonIndexService;

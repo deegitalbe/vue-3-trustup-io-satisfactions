@@ -1,13 +1,5 @@
-import SatisfactionRequestFactory from "./SatisfactionRequestFactory";
-import SatisfactionRequestDataFactory from "./SatisfactionRequestDataFactory";
-import StoreSatisfactionRequestFactory from "./StoreSatisfactionRequestFactory";
-import UpdateSatisfactionRequestFactory from "./UpdateSatisfactionRequestFactory";
-import ShowSatisfactionRequestFactory from "./ShowSatisfactionRequestFactory";
-
-export default {
-  SatisfactionRequestFactory,
-  SatisfactionRequestDataFactory,
-  StoreSatisfactionRequestFactory,
-  UpdateSatisfactionRequestFactory,
-  ShowSatisfactionRequestFactory,
-};
+export { default as SatisfactionRequestFactory } from "./SatisfactionRequestFactory";
+export { default as SatisfactionRequestDataFactory } from "./SatisfactionRequestDataFactory";
+export { default as StoreSatisfactionRequestFactory } from "./StoreSatisfactionRequestFactory";
+export { default as UpdateSatisfactionRequestFactory } from "./UpdateSatisfactionRequestFactory";
+export { default as ShowSatisfactionRequestFactory } from "./ShowSatisfactionRequestFactory";

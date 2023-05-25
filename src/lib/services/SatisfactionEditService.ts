@@ -1,6 +1,6 @@
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 import useSatisfactionShowService from "../composables/useSatisfactionShowService";
-export class SatisfactionEditService {
+class SatisfactionEditService {
   public builder;
   private _service;
   private _uuid;
@@ -28,3 +28,4 @@ export class SatisfactionEditService {
     this._service = service;
   }
 }
+export default SatisfactionEditService;

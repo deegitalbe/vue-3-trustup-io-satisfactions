@@ -1,2 +1,1 @@
-import SatisfactionFormBuilder from "./satisfaction/form/SatisfactionFormBuilder";
-export default { SatisfactionFormBuilder };
+export * from "./satisfaction";

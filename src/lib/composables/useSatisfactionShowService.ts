@@ -1,5 +1,5 @@
 import { reactive } from "vue";
-import { SatisfactionShowService } from "../services/SatisfactionShowService";
+import { SatisfactionShowService } from "../services";
 const useSatisfactionShowService = () =>
   reactive(new SatisfactionShowService());
 

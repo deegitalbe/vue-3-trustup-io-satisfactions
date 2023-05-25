@@ -1,14 +1,14 @@
 import EditNoteModal from "../components/modals/EditNoteModal.vue";
-import { useComponentModal } from "../utils/emitter";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 import StoreService from "../factories/satisfaction/StoreService";
 import { reactive } from "vue";
+import { useModal } from "@deegital/vue3-trustup-io-vue-final-modal";
 // import { notify } from ".";
 
 export const useEditSatisfaction = (uuid: string) => {
   const builder = reactive(new SatisfactionFormBuilder());
 
-  const { open, close } = useComponentModal(EditNoteModal, {
+  const { open, close } = useModal(EditNoteModal, {
     builder,
     uuid,
   });
