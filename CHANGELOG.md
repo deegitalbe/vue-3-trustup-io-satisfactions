@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.1.1
+
+### Patch Changes
+
+- 8e00375: Fixing export
+
 ## 0.1.0
 
 ### Minor Changes
