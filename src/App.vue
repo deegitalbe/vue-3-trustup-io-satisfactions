@@ -21,12 +21,12 @@
 </template>
 
 <script setup lang="ts">
+import "@deegital/vue3-trustup-io-vue-final-modal/dist/style.css";
 import "./lib";
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "@deegital/vue3-trustup-io-vue-final-modal";
 import { useEditSatisfaction } from "./lib";
-
 const toasteo = useToasteo();
 const { open, onSuccess } = useEditSatisfaction("1");
 onSuccess((note) => console.log(note));
