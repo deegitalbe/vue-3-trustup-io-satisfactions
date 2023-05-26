@@ -22,7 +22,7 @@ export default ({ mode }) => {
         formats: ["es", "cjs"],
       },
       rollupOptions: {
-        external: ["vue", "vue-star-rating"],
+        external: ["vue"],
         output: {
           globals: {
             vue: "Vue",

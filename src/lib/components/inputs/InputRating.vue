@@ -1,23 +1,14 @@
 <template>
   <div>
-    <star-rating
-      v-model:rating="ratingValue"
-      star-size="30"
-      :rounded-corners="true"
-      :animate="true"
-      :show-rating="false"
-      :active-color="['red', 'red', 'orange', 'green', 'green']"
-      @input="formField.validator.resetValidation"
-      @blur="formField.validator.validate"
-    ></star-rating>
+    <rate v-model="ratingValue" :length="5" class="text-4xl text-gr"
+      ><i class="fa-duotone fa-star"></i
+    ></rate>
   </div>
 </template>
 <script setup lang="ts">
 import { computed } from "vue";
 import { Field } from "@henrotaym/vue-3-forms";
-import StarRating from "vue-star-rating";
 import { Reactive } from "@henrotaym/vue-3-forms";
-
 interface Props {
   formField: Reactive<Field>;
 }
@@ -26,10 +17,24 @@ const props = defineProps<Props>();
 
 const ratingValue = computed({
   get() {
+    console.log("get", props.formField.value);
     return props.formField.value as number;
   },
   set(modelValue: number) {
+    console.log("set", modelValue);
     props.formField.setValue(modelValue);
   },
 });
+// const getCurrentColor = () => {
+//   switch (ratingValue.value) {
+//     case 1 || 2:
+//       return "text-red-500";
+//     case 3:
+//       return "text-orange-500";
+//     case 4 || 5:
+//       return "text-green-500";
+//     default:
+//       return "text-gray-200";
+//   }
+// };
 </script>
