@@ -11,7 +11,6 @@
       second-circle-color="#a6baed"
       third-circle-color="#1B4CCA"
     />
-    <!-- <update-note :model="model" @success="success" /> -->
   </CenteredModal>
 </template>
 

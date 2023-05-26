@@ -1,10 +1,5 @@
 <template>
   <div class="flex space-x-2">
-    <!-- <label
-      for="isUsing"
-      class="text-gray-500 flex first-letter:capitalize whitespace-nowrap"
-      >Using App:</label
-    > -->
     <div
       class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in text-[#dbd1d1]"
     >

@@ -8,7 +8,7 @@ import { useModal } from "@deegital/vue3-trustup-io-vue-final-modal";
 export const useEditSatisfaction = (uuid: string) => {
   const builder = reactive(new SatisfactionFormBuilder());
 
-  const { open, close } = useModal(EditNoteModal, {
+  const modal = useModal(EditNoteModal, {
     builder,
     uuid,
   });
@@ -20,11 +20,15 @@ export const useEditSatisfaction = (uuid: string) => {
     if (!response) return;
     //  if (!response) notify.useToasteoError();
     // notify.useToasteoSuccess();
-    close();
+    modal.close();
     return response;
   });
 
-  return { open, close, onSuccess: builder.onSuccess.bind(builder) };
+  return {
+    open: modal.open,
+    close: modal.close,
+    onSuccess: builder.onSuccess.bind(builder),
+  };
 };
 
 export default useEditSatisfaction;

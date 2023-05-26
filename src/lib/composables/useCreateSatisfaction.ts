@@ -26,8 +26,12 @@ export const useCreateSatisfaction = ({
 
   builder.onSubmit(async (form) => await service.store(form.fields));
 
-  const { open, close } = useModal(CreateNoteModal, { builder });
-  return { open, close, onSuccess: builder.onSuccess.bind(builder) };
+  const modal = useModal(CreateNoteModal, { builder });
+  return {
+    open: modal.open,
+    close: modal.close,
+    onSuccess: builder.onSuccess.bind(builder),
+  };
 };
 
 export default useCreateSatisfaction;

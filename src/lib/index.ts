@@ -1,5 +1,4 @@
 // Silence is golden 🤫
-import "../main.css";
 export * from "./api";
 export * from "./builders";
 export * from "./composables";
