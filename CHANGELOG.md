@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.1.4
+
+### Patch Changes
+
+- 2bb5dae: Not compiling external dependency.
+
 ## 0.1.3
 
 ### Patch Changes
