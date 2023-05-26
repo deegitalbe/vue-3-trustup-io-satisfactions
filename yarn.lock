@@ -3669,13 +3669,6 @@ vue-i18n@9:
     "@intlify/vue-devtools" "9.2.2"
     "@vue/devtools-api" "^6.2.1"
 
-vue-star-rating@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-star-rating/-/vue-star-rating-2.1.0.tgz#303df0231b5d04d271977c44a0967d4768b44e75"
-  integrity sha512-LnhuQPi4hkRg7egKls+iqtL1U0RTN2gQkdLsJN7acyynMsSc9epHLzk8McJS+bR0OzfG98zNFq7mxAyuSb/okQ==
-  dependencies:
-    vue "^3.0.0"
-
 vue-template-compiler@^2.7.14:
   version "2.7.14"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.7.14.tgz#4545b7dfb88090744c1577ae5ac3f964e61634b1"
@@ -3693,7 +3686,7 @@ vue-tsc@^1.2.0:
     "@volar/vue-typescript" "1.6.5"
     semver "^7.3.8"
 
-vue@^3.0.0, vue@^3.2.47:
+vue@^3.2.47:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.3.2.tgz#407f0057a7a154d836b66f94ce81779d0c2cafbc"
   integrity sha512-98hJcAhyDwZoOo2flAQBSPVYG/o0HA9ivIy2ktHshjE+6/q8IMQ+kvDKQzOZTFPxvnNMcGM+zS2A00xeZMA7tA==
