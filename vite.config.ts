@@ -2,7 +2,6 @@ import { defineConfig, loadEnv } from "vite";
 import eslint from "vite-plugin-eslint";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
-import styleInject from "vite-plugin-style-inject";
 
 // https://vitejs.dev/config/
 export default ({ mode }) => {
@@ -15,7 +14,6 @@ export default ({ mode }) => {
       dts({
         insertTypesEntry: true,
       }),
-      styleInject(),
     ],
     build: {
       lib: {
@@ -24,7 +22,7 @@ export default ({ mode }) => {
         formats: ["es", "cjs"],
       },
       rollupOptions: {
-        external: ["vue"],
+        external: ["vue", "vue-star-rating"],
         output: {
           globals: {
             vue: "Vue",

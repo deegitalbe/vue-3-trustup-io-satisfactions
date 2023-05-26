@@ -8,13 +8,14 @@
         v-model="selected"
         type="checkbox"
         name="toggle"
-        class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+        class="absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-green-400"
         @input="formField.validator.resetValidation"
         @blur="formField.validator.validate"
       />
       <label
         for="toggle"
-        class="toggle-label block overflow-hidden h-6 rounded-full bg-red-400 cursor-pointer"
+        class="block overflow-hidden h-6 rounded-full bg-red-400 cursor-pointer"
+        :class="{ 'bg-green-400': selected, 'bg-red-400': !selected }"
       ></label>
     </div>
   </div>
@@ -39,16 +40,3 @@ const selected = computed({
   },
 });
 </script>
-<style>
-/* CHECKBOX TOGGLE SWITCH */
-/* @apply rules for documentation, these do not work as inline style */
-.toggle-checkbox:checked {
-  @apply: right-0 border-green-400;
-  right: 0;
-  border-color: #68d391;
-}
-.toggle-checkbox:checked + .toggle-label {
-  @apply: bg-green-400;
-  background-color: #68d391;
-}
-</style>
