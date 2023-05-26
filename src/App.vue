@@ -25,7 +25,7 @@ import "@deegital/vue3-trustup-io-vue-final-modal/dist/style.css";
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "@deegital/vue3-trustup-io-vue-final-modal";
-import { useEditSatisfaction } from "./lib";
+import { useEditSatisfaction } from "./lib/composables";
 const toasteo = useToasteo();
 const { open, onSuccess } = useEditSatisfaction("1");
 onSuccess((note) => console.log(note));
