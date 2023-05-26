@@ -264,10 +264,10 @@
   dependencies:
     vue "^3.2.47"
 
-"@deegital/vue3-trustup-io-vue-final-modal@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@deegital/vue3-trustup-io-vue-final-modal/-/vue3-trustup-io-vue-final-modal-0.2.2.tgz#d68a017912bc95595c5062419a44a0e0d9ea6485"
-  integrity sha512-QpwKUOoyfUGkN4l8aHR0HkYBkv4CZzwUdjSRofYVvQ2FfPkC49hnjCfpOXGh8t99pzGIgAw+v/WBZsMUwQCFgw==
+"@deegital/vue3-trustup-io-vue-final-modal@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@deegital/vue3-trustup-io-vue-final-modal/-/vue3-trustup-io-vue-final-modal-0.2.4.tgz#29fe9af97c00d3bc903d6b49e60774fc008c1a4d"
+  integrity sha512-eGNON5WvdKHka2UUqcdQ6wuJpxHmWUzwbr1/lY0TuvkV2w+Ne7pTDQPADZy3Z8RgVIUrn/gKShI8EvvJlZ9Fxw==
   dependencies:
     vue "^3.2.47"
     vue-final-modal "^4.4.2"
