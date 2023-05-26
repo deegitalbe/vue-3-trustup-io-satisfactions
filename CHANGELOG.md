@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.1.3
+
+### Patch Changes
+
+- bbfd983: Stop destructuring useModal when not in setup location.
+
 ## 0.1.2
 
 ### Patch Changes
