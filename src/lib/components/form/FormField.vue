@@ -11,9 +11,12 @@ defineProps<Props>();
 
 <template>
   <fieldset class="flex flex-col gap-2 w-full">
-    <label class="text-sm text-gray-600 block capitalize" for="">{{
-      formField.label
-    }}</label>
+    <label
+      class="text-sm text-gray-600 block capitalize"
+      :class="formField.label === 'Value' ? 'hidden' : ''"
+      for=""
+      >{{ formField.label }}</label
+    >
     <slot></slot>
     <div v-if="formField.validator.hasError" class="text-red-600 text-sm">
       {{ formField.validator.error }}

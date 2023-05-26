@@ -3754,6 +3754,13 @@ vue-i18n@9:
     "@intlify/vue-devtools" "9.2.2"
     "@vue/devtools-api" "^6.2.1"
 
+vue-rate@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/vue-rate/-/vue-rate-3.1.1.tgz#3fe33f59e0d8033ee5bd64f6bfeb50cdf04a4f9f"
+  integrity sha512-td68rhpulsEl3MVLemzL3sf6ViPhWkPTTBfWC2jWLJK5SHSWrIPAQ+8ER/2srBlJvyQZl/spDUxPpG5b3NNq9Q==
+  dependencies:
+    vue "^3.0.0"
+
 vue-template-compiler@^2.7.14:
   version "2.7.14"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.7.14.tgz#4545b7dfb88090744c1577ae5ac3f964e61634b1"
@@ -3770,6 +3777,17 @@ vue-tsc@^1.2.0:
     "@volar/vue-language-core" "1.6.5"
     "@volar/vue-typescript" "1.6.5"
     semver "^7.3.8"
+
+vue@^3.0.0:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-3.3.4.tgz#8ed945d3873667df1d0fcf3b2463ada028f88bd6"
+  integrity sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==
+  dependencies:
+    "@vue/compiler-dom" "3.3.4"
+    "@vue/compiler-sfc" "3.3.4"
+    "@vue/runtime-dom" "3.3.4"
+    "@vue/server-renderer" "3.3.4"
+    "@vue/shared" "3.3.4"
 
 vue@^3.2.47:
   version "3.3.2"
