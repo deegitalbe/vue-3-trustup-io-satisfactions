@@ -1,5 +1,12 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.2.1
+
+### Patch Changes
+
+- 248bcbd: Adding plugins for rate.
+- 248bcbd: Removing plugin.
+
 ## 0.2.0
 
 ### Minor Changes
