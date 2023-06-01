@@ -1,5 +1,5 @@
 <template>
-  <CenteredModal>
+  <CenteredModal class="min-h-[800px]">
     <satisfaction-form :form="form" />
   </CenteredModal>
 </template>
