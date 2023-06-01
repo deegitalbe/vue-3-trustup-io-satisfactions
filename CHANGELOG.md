@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.5
+
+### Patch Changes
+
+- ac42c20: testing vfm
+
 ## 0.3.4
 
 ### Patch Changes
