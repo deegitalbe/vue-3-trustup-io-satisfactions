@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.0
+
+### Minor Changes
+
+- 96f3726: Adding custom ratings component
+
 ## 0.2.1
 
 ### Patch Changes
