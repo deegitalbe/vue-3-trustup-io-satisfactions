@@ -48,19 +48,6 @@ function generateEqualWidthAndHeight(size: string | number) {
   };
 }
 
-// function increaseRating() {
-//   const numberOfStars = props.numberOfStars;
-//   const newRating = rating.value + props.step;
-
-//   rating.value = newRating >= numberOfStars ? numberOfStars : newRating;
-// }
-
-// function decreaseRating() {
-//   const newRating = rating.value - props.step;
-
-//   rating.value = newRating <= 0 ? 0 : newRating;
-// }
-
 const roundedRating = computed(() => {
   return rounded(rating.value, 1);
 });
@@ -107,21 +94,6 @@ watch(roundedRating, (newValue) => {
 <template>
   <div class="vue3-star-ratings__wrapper">
     <div class="vue3-star-ratings">
-      <!-- <button
-        v-if="showControl"
-        :style="{
-          ...generateEqualWidthAndHeight(controlSize),
-          backgroundColor: controlBg,
-          color: controlColor,
-        }"
-        @click="decreaseRating"
-      >
-        <AngleLeft
-          :style="{
-            ...generateEqualWidthAndHeight(+controlSize - 16),
-          }"
-        />
-      </button> -->
       <div
         ref="starsContainer"
         class="stars"
@@ -151,22 +123,6 @@ watch(roundedRating, (newValue) => {
           </star-icon>
         </div>
       </div>
-
-      <!-- <button
-        v-if="showControl"
-        :style="{
-          ...generateEqualWidthAndHeight(controlSize),
-          backgroundColor: controlBg,
-          color: controlColor,
-        }"
-        @click="increaseRating"
-      >
-        <AngleRight
-          :style="{
-            ...generateEqualWidthAndHeight(+controlSize - 16),
-          }"
-        />
-      </button> -->
     </div>
   </div>
 </template>

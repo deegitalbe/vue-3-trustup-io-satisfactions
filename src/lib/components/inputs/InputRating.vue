@@ -21,6 +21,7 @@ const ratingValue = computed({
     return props.formField.value as number;
   },
   set(modelValue: number) {
+    console.log(modelValue);
     props.formField.setValue(modelValue);
   },
 });
