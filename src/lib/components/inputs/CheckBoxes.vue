@@ -8,13 +8,13 @@
         v-model="selected"
         type="checkbox"
         name="toggle"
-        class="absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-green-400"
+        class="absolute block w-5 h-5 rounded-full bg-white appearance-none cursor-pointer checked:right-0 border border-gray-300"
         @input="formField.validator.resetValidation"
         @blur="formField.validator.validate"
       />
       <label
         for="toggle"
-        class="block overflow-hidden h-6 rounded-full bg-red-400 cursor-pointer"
+        class="block overflow-hidden h-5 rounded-full cursor-pointer"
         :class="{ 'bg-green-400': selected, 'bg-red-400': !selected }"
       ></label>
     </div>
