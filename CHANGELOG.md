@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.1
+
+### Patch Changes
+
+- 1cf196f: Updating switch background
+
 ## 0.3.0
 
 ### Minor Changes
