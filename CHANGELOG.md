@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.3
+
+### Patch Changes
+
+- cae2bdd: testing to add plugin
+
 ## 0.3.2
 
 ### Patch Changes
