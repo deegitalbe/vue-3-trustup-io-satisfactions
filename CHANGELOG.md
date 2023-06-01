@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.2
+
+### Patch Changes
+
+- 549b6e3: Removing Joi error message (debug)
+
 ## 0.3.1
 
 ### Patch Changes
