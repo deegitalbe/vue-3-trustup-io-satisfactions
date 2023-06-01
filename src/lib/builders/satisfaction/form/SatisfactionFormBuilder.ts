@@ -108,9 +108,7 @@ export class SatisfactionFormBuilder {
     const reason = new Field({
       label: "Reason",
       value: this._reason,
-      validation: Joi.number()
-        .required()
-        .messages({ "number.required": "You must select a reason" }),
+      validation: Joi.number().required(),
     });
 
     const createdById = new Field({
