@@ -18,9 +18,9 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: 0,
+  modelValue: 1,
   starColor: "#ff9800",
-  inactiveColor: "#333333",
+  inactiveColor: "#c0c0c0",
   starSize: "32",
   controlBg: "#2e5090",
   controlColor: "#fff",
@@ -28,7 +28,7 @@ const props = withDefaults(defineProps<Props>(), {
   numberOfStars: 5,
   showControl: true,
   disableClick: false,
-  step: 0.5,
+  step: 1,
 });
 
 const emit = defineEmits<{
@@ -38,7 +38,7 @@ const emit = defineEmits<{
 const rating = ref(props.modelValue || 0);
 function rounded(value: number, decimalPlaces: number) {
   const power = 1 ** decimalPlaces;
-  return Math.round(value * power) / power;
+  return Math.abs(Math.round(value * power) / power);
 }
 
 function generateEqualWidthAndHeight(size: string | number) {
@@ -83,7 +83,7 @@ function adjustRating(this: HTMLDivElement, e: MouseEvent) {
   // console.log(this.offsetWidth, "LAYOUT WIDTH #CONTAINER OF THE STARS");
 
   // console.log((relativeX / this.offsetWidth) * numberOfStars);
-  rating.value = (relativeX / this.offsetWidth) * numberOfStars;
+  rating.value = (relativeX / this.offsetWidth) * numberOfStars + 1;
   console.log(rounded(rating.value, 1));
 }
 
@@ -137,7 +137,10 @@ watch(roundedRating, (newValue) => {
           />
         </div>
 
-        <div class="stars-inner" :style="{ width: percent, color: starColor }">
+        <div
+          class="stars-inner"
+          :style="{ width: percent, color: rating <= 3 ? 'red' : starColor }"
+        >
           <star-icon
             v-for="i in numberOfStars"
             :key="i"
