@@ -22,8 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import "vue-final-modal/style.css";
-
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "./lib";
