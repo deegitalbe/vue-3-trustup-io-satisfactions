@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.6
+
+### Patch Changes
+
+- d0b7e00: debug
+
 ## 0.3.5
 
 ### Patch Changes
