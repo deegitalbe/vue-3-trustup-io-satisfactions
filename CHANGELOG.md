@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.8
+
+### Patch Changes
+
+- b208d1c: Fixing css
+
 ## 0.3.7
 
 ### Patch Changes
