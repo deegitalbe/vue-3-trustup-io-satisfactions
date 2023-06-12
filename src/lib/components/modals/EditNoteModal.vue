@@ -1,5 +1,10 @@
 <template>
-  <CenteredModal>
+  <VueFinalModal
+    class="flex justify-center items-center"
+    :content-class="`p-11 bg-white bg-red[500] rounded-lg min-h-[37.5rem] min-w-[34.5rem] inline-block space-x-2`"
+    overlay-transition="vfm-fade"
+    content-transition="vfm-fade"
+  >
     <satisfaction-form
       v-if="satisfactionEditService.service.isReady()"
       :form="satisfactionEditService.form"
@@ -11,11 +16,11 @@
       second-circle-color="#a6baed"
       third-circle-color="#1B4CCA"
     />
-  </CenteredModal>
+  </VueFinalModal>
 </template>
 
 <script setup lang="ts">
-import { CenteredModal } from "@deegital/vue3-trustup-io-vue-final-modal";
+import { VueFinalModal } from "vue-final-modal";
 
 import { AppLoader } from "@deegital/vue-3-trustup-io-loader";
 
@@ -34,6 +39,7 @@ const satisfactionEditService = useSatisfactionEditService(
   props.uuid
 );
 const init = async () => {
+  console.log("coucou");
   await satisfactionEditService.setForm();
 };
 

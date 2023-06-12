@@ -264,14 +264,6 @@
   dependencies:
     vue "^3.2.47"
 
-"@deegital/vue3-trustup-io-vue-final-modal@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@deegital/vue3-trustup-io-vue-final-modal/-/vue3-trustup-io-vue-final-modal-0.2.4.tgz#29fe9af97c00d3bc903d6b49e60774fc008c1a4d"
-  integrity sha512-eGNON5WvdKHka2UUqcdQ6wuJpxHmWUzwbr1/lY0TuvkV2w+Ne7pTDQPADZy3Z8RgVIUrn/gKShI8EvvJlZ9Fxw==
-  dependencies:
-    vue "^3.2.47"
-    vue-final-modal "^4.4.2"
-
 "@esbuild/android-arm64@0.17.19":
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.17.19.tgz#bafb75234a5d3d1b690e7c2956a599345e84a2fd"

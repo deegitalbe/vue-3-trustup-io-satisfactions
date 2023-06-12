@@ -1,9 +1,9 @@
 import CreateNoteModal from "../components/modals/CreateNoteModal.vue";
-import { useModal } from "@deegital/vue3-trustup-io-vue-final-modal";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 import StoreService from "../factories/satisfaction/StoreService";
 import { reactive } from "vue";
 import Origin from "../enums/Origin";
+import useModal from "./useModal";
 
 export const useCreateSatisfaction = ({
   origin,

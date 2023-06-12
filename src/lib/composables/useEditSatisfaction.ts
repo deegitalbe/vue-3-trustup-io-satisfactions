@@ -2,8 +2,8 @@ import EditNoteModal from "../components/modals/EditNoteModal.vue";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 import StoreService from "../factories/satisfaction/StoreService";
 import { reactive } from "vue";
-import { useModal } from "@deegital/vue3-trustup-io-vue-final-modal";
 // import { notify } from ".";
+import useModal from "./useModal";
 
 export const useEditSatisfaction = (uuid: string) => {
   const builder = reactive(new SatisfactionFormBuilder());
