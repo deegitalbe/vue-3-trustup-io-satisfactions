@@ -6,6 +6,7 @@
       class="absolute top-5 right-5 py-1 px-2 bg-[#FF8A00] rounded-md text-white text-xs font-semibold cursor-pointer text-center"
       @click="open()"
     >
+      CLICK ME
       <i class="fa-solid fa-plus font-s text-2xl" />
     </div>
     <!-- <div
@@ -21,10 +22,11 @@
 </template>
 
 <script setup lang="ts">
-import "@deegital/vue3-trustup-io-vue-final-modal/dist/style.css";
+import "vue-final-modal/style.css";
+
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
-import { ModalsContainer } from "@deegital/vue3-trustup-io-vue-final-modal";
+import { ModalsContainer } from "vue-final-modal";
 import { useEditSatisfaction } from "./lib/composables";
 const toasteo = useToasteo();
 const { open, onSuccess } = useEditSatisfaction("1");
