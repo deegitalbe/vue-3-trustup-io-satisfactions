@@ -1,10 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import { translationPlugin } from "@deegital/vue-3-trustup-io-i18n";
 import "./main.css";
-import { satisfactionPlugin } from "./lib";
+import { createVfm } from "vue-final-modal";
+import satisfactionPlugin from "./lib/plugins/satisfactionPlugin";
 
 const app = createApp(App);
-app.use(satisfactionPlugin);
-app.use(translationPlugin, { appName: "worksite-admin" });
+app.use(satisfactionPlugin, createVfm);
 app.mount("#app");
