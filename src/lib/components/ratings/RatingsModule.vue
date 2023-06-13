@@ -70,8 +70,9 @@ function adjustRating(this: HTMLDivElement, e: MouseEvent) {
   // console.log(this.offsetWidth, "LAYOUT WIDTH #CONTAINER OF THE STARS");
 
   // console.log((relativeX / this.offsetWidth) * numberOfStars);
-  rating.value = (relativeX / this.offsetWidth) * numberOfStars + 1;
-  console.log(rounded(rating.value, 1));
+  rating.value =
+    (relativeX / this.offsetWidth) * numberOfStars + 1 - props.numberOfStars;
+  // console.log(rounded(rating.value, 1));
 }
 
 onMounted(() => {
