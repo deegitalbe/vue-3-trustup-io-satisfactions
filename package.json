@@ -1,7 +1,7 @@
 {
   "name": "@deegital/vue-3-trustup-io-satisfactions",
   "description": "vue-3-trustup-io-satisfactions",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "type": "module",
   "files": [
     "dist"

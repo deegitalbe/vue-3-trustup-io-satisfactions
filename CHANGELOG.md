@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.12
+
+### Patch Changes
+
+- c38b220: debug work in progress
+
 ## 0.3.11
 
 ### Patch Changes
