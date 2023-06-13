@@ -4,8 +4,7 @@ import "vue-final-modal/style.css";
 import { translationPlugin } from "@deegital/vue-3-trustup-io-i18n";
 
 const satisfactionPlugin: Plugin = {
-  install: (app, createVfm) => {
-    const vfm = createVfm();
+  install: (app, vfm) => {
     app.use(translationPlugin, { appName: "worksite-admin" });
     app.use(vfm);
   },

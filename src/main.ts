@@ -5,5 +5,6 @@ import { createVfm } from "vue-final-modal";
 import satisfactionPlugin from "./lib/plugins/satisfactionPlugin";
 
 const app = createApp(App);
-app.use(satisfactionPlugin, createVfm);
+const vfm = createVfm();
+app.use(satisfactionPlugin, vfm);
 app.mount("#app");
