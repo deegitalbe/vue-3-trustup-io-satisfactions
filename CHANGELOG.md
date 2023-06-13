@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.11
+
+### Patch Changes
+
+- 53fe751: test useVfm
+
 ## 0.3.10
 
 ### Patch Changes
