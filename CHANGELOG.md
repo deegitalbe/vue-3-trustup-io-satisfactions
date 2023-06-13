@@ -1,5 +1,12 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.3.9
+
+### Patch Changes
+
+- bb6bdd3: fixing bug on ratings calculation.
+- d9b05ae: Adding translation to plugin
+
 ## 0.3.8
 
 ### Patch Changes
