@@ -1,12 +1,11 @@
 // import { createApp } from "vue";
 import { Plugin } from "vue";
 import "vue-final-modal/style.css";
-import { translationPlugin } from "@deegital/vue-3-trustup-io-i18n";
+import { useTranslation } from "@deegital/vue-3-trustup-io-translations";
 
 const satisfactionPlugin: Plugin = {
-  install: (app, vfm) => {
-    app.use(translationPlugin, { appName: "worksite-admin" });
-    app.use(vfm);
+  install: () => {
+    useTranslation().addTranslationsByKey("worksite-admin");
   },
 };
 
