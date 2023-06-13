@@ -1,4 +1,4 @@
-import { useTranslation } from "@deegital/vue-3-trustup-io-i18n";
+import { useTranslation } from "@deegital/vue-3-trustup-io-translations";
 type Selectable = { id: string; label: string; value: unknown };
 export interface Selectables {
   id: string;

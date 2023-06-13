@@ -40,7 +40,6 @@ const satisfactionEditService = useSatisfactionEditService(
   props.uuid
 );
 const init = async () => {
-  console.log("coucou");
   await satisfactionEditService.setForm();
 };
 
