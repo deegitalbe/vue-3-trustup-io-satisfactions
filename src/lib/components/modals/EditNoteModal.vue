@@ -1,5 +1,6 @@
 <template>
   <VueFinalModal
+    modal-id="editNote"
     class="flex justify-center items-center"
     :content-class="`p-11 bg-white bg-red[500] rounded-lg min-h-[37.5rem] min-w-[34.5rem] inline-block space-x-2`"
     overlay-transition="vfm-fade"
