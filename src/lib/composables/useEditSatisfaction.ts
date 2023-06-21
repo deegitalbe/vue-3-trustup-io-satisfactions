@@ -1,7 +1,6 @@
 import EditNoteModal from "../components/modals/EditNoteModal.vue";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 import StoreService from "../factories/satisfaction/StoreService";
-// import { notify } from ".";
 import { useModal } from "@henrotaymcorp/vue-modal";
 
 export const useEditSatisfaction = (uuid: string) => {
