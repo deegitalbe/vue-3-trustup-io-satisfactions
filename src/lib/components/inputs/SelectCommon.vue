@@ -27,7 +27,7 @@ import { computed } from "vue";
 import { Selectables } from "../../composables/useSelectables";
 import { Reactive, Field } from "@henrotaym/vue-3-forms";
 const props = defineProps<{
-  modelValue: number | undefined;
+  modelValue: number | null | string;
   trackBy: keyof Selectables;
   title: string;
   selectables: Selectables[];

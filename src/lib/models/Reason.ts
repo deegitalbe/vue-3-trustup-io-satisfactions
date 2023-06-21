@@ -10,7 +10,7 @@ export default class Reason {
     this._title = data.title;
   }
 
-  get id() {
+  get id(): number {
     return this._id;
   }
 

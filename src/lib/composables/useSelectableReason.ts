@@ -5,7 +5,7 @@ import Reason from "../models/Reason";
 const useSelectableReason = (reasons: Reason[]) => {
   const selectables = computed(() => {
     return Selectables.useSelectable(reasons, (element: Reason) => ({
-      id: element.id.toString(),
+      id: element.id,
       label: element.title,
       value: element.title,
     }));
