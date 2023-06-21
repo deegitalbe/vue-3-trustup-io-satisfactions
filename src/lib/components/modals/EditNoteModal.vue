@@ -26,6 +26,7 @@ interface Props {
   builder: SatisfactionFormBuilder;
   uuid: string;
 }
+console.log("EditNoteModal triggered");
 const props = defineProps<Props>();
 const satisfactionEditService = useSatisfactionEditService(
   props.builder,
