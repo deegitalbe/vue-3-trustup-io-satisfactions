@@ -9,6 +9,7 @@
       CLICK ME
       <i class="fa-solid fa-plus font-s text-2xl" />
     </div>
+
     <!-- <div
       class="absolute top-5 right-20 py-1 px-2 bg-[blue] rounded-md text-white text-xs font-semibold cursor-pointer text-center"
       @click="updateNoteModal.open()"
@@ -24,8 +25,9 @@
 <script setup lang="ts">
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
-import { ModalsContainer } from "./lib";
 import { useEditSatisfaction } from "./lib/composables";
+import { ModalsContainer } from "@henrotaymcorp/vue-modal";
+import "@henrotaymcorp/vue-modal/dist/style.css";
 const toasteo = useToasteo();
 const { open, onSuccess } = useEditSatisfaction("1");
 onSuccess((note) => console.log(note));

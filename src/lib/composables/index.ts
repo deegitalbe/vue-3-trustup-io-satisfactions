@@ -7,4 +7,3 @@ export { default as useSatisfactionShowService } from "./useSatisfactionShowServ
 export { default as useSelectableReason } from "./useSelectableReason";
 export { default as useToasteoSuccess } from "./useToasteoNotification";
 export { default as useToasteoError } from "./useToasteoNotification";
-export { default as useModal } from "./useModal";

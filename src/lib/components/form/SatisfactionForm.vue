@@ -6,7 +6,10 @@
         :is-centered="true"
       >
         <form-field :form-field="form.fields.value" class="items-center">
-          <input-rating :form-field="form.fields.value"></input-rating>
+          <input-rating
+            :form-field="form.fields.value"
+            :number-of-stars="5"
+          ></input-rating>
         </form-field>
       </row-with-input>
       <row-with-input>
