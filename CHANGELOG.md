@@ -1,5 +1,12 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.6
+
+### Patch Changes
+
+- 298d165: Adding translation key within plugin
+- 09f8365: Fixing validation typing
+
 ## 0.4.5
 
 ### Patch Changes
