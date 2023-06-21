@@ -11,7 +11,7 @@ export class SatisfactionFormBuilder {
   private _is_using = true;
   private _origin!: Origin;
   private _onSubmit!: OnSubmit;
-  private _onSuccess?: OnSuccess;
+  private _onSuccess!: OnSuccess;
   private _text = "";
   private _reason: number | null = null;
   private _createdById!: number;
@@ -76,7 +76,6 @@ export class SatisfactionFormBuilder {
     this._is_using = isUsing;
     return this;
   }
-  // TODO CHANGE VALIDATION TO ZOD
   public build() {
     const value = new Field({
       label: "Value",

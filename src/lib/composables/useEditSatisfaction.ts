@@ -1,16 +1,18 @@
 import EditNoteModal from "../components/modals/EditNoteModal.vue";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
 import StoreService from "../factories/satisfaction/StoreService";
-import { reactive } from "vue";
 // import { notify } from ".";
+import { useModal } from "@henrotaymcorp/vue-modal";
 
 export const useEditSatisfaction = (uuid: string) => {
-  const builder = reactive(new SatisfactionFormBuilder());
+  const builder = new SatisfactionFormBuilder();
   /// TODO
-  const modal = useModal(EditNoteModal, {
-    builder,
-    uuid,
-  });
+  // const modal = useModal(EditNoteModal, {
+  //   builder,
+  //   uuid,
+  // });
+
+  const { open: rawOpen, close } = useModal(EditNoteModal);
 
   const service = new StoreService();
 
@@ -19,13 +21,18 @@ export const useEditSatisfaction = (uuid: string) => {
     if (!response) return;
     //  if (!response) notify.useToasteoError();
     // notify.useToasteoSuccess();
-    modal.close();
     return response;
   });
 
+  const open = () =>
+    rawOpen({
+      builder: builder,
+      uuid: uuid,
+    });
+
   return {
-    open: modal.open,
-    close: modal.close,
+    open,
+    close,
     onSuccess: builder.onSuccess.bind(builder),
   };
 };
