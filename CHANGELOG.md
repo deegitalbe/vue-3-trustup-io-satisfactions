@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.5
+
+### Patch Changes
+
+- ba509b4: Temporary fixing modal by adding props to export from composable.
+
 ## 0.4.4
 
 ### Patch Changes
