@@ -28,6 +28,8 @@ export const useEditSatisfaction = (uuid: string) => {
     open,
     close,
     onSuccess: builder.onSuccess.bind(builder),
+    builder,
+    uuid,
   };
 };
 
