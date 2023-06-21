@@ -36,6 +36,7 @@ export const useCreateSatisfaction = ({
     open,
     close,
     onSuccess: builder.onSuccess.bind(builder),
+    builder,
   };
 };
 
