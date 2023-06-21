@@ -21,6 +21,7 @@
 </template>
 
 <script setup lang="ts">
+// TODO
 import { VueFinalModal } from "vue-final-modal";
 
 import { AppLoader } from "@deegital/vue-3-trustup-io-loader";

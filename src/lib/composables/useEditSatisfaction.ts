@@ -3,11 +3,10 @@ import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionF
 import StoreService from "../factories/satisfaction/StoreService";
 import { reactive } from "vue";
 // import { notify } from ".";
-import useModal from "./useModal";
 
 export const useEditSatisfaction = (uuid: string) => {
   const builder = reactive(new SatisfactionFormBuilder());
-
+  /// TODO
   const modal = useModal(EditNoteModal, {
     builder,
     uuid,

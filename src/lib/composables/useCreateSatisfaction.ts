@@ -3,7 +3,6 @@ import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionF
 import StoreService from "../factories/satisfaction/StoreService";
 import { reactive } from "vue";
 import Origin from "../enums/Origin";
-import useModal from "./useModal";
 
 export const useCreateSatisfaction = ({
   origin,
@@ -26,6 +25,7 @@ export const useCreateSatisfaction = ({
 
   builder.onSubmit(async (form) => await service.store(form.fields));
 
+  // TODO
   const modal = useModal(CreateNoteModal, { builder });
   return {
     open: modal.open,

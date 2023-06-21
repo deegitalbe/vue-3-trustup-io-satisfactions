@@ -1,9 +1,8 @@
 import { Field, Form, useReactiveForm } from "@henrotaym/vue-3-forms";
-import Joi from "joi";
 import Satisfaction from "../../../models/Satisfaction";
 import { SatisfactionFields } from "../../../types";
 import Origin from "../../../enums/Origin";
-
+import { z } from "zod";
 type OnSuccess = (satisfaction: Satisfaction) => void;
 type OnSubmit = (form: Form<SatisfactionFields>) => Promise<Satisfaction>;
 
@@ -77,56 +76,54 @@ export class SatisfactionFormBuilder {
     this._is_using = isUsing;
     return this;
   }
-
+  // TODO CHANGE VALIDATION TO ZOD
   public build() {
     const value = new Field({
       label: "Value",
       value: this._value,
-      validation: Joi.number().min(1).max(5),
+      validation: z.number(),
     });
 
     const isUsing = new Field({
       label: "Using app",
       value: this._is_using,
-      validation: Joi.boolean().required(),
+      validation: z.boolean(),
     });
 
     const origin = new Field({
       label: "Origin",
       value: this._origin,
-      validation: Joi.string()
-        .valid(Origin.MARKETPLACE, Origin.WORKSITE)
-        .required(),
+      validation: z.enum(["marketplace", "worksite"]),
     }) as Field<Origin>;
 
     const text = new Field({
       label: "Text",
       value: this._text,
-      validation: Joi.string().required(),
+      validation: z.string(),
     });
 
     const reason = new Field({
       label: "Reason",
       value: this._reason,
-      validation: Joi.number().required(),
+      validation: z.number(),
     });
 
     const createdById = new Field({
       label: "created_by_id",
       value: this._createdById,
-      validation: Joi.number(),
+      validation: z.number(),
     });
 
     const relatedToId = new Field({
       label: "related_to_id",
       value: this._relatedToId,
-      validation: Joi.string(),
+      validation: z.string(),
     });
 
     const relatedToType = new Field({
       label: "related_to_type",
       value: this._relatedToType,
-      validation: Joi.string(),
+      validation: z.string(),
     });
 
     const form = useReactiveForm({
