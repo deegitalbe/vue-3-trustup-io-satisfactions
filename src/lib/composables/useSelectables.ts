@@ -1,7 +1,7 @@
 import { useTranslation } from "@deegital/vue-3-trustup-io-translations";
-type Selectable = { id: string; label: string; value: unknown };
+type Selectable = { id: string | number; label: string; value: unknown };
 export interface Selectables {
-  id: string;
+  id: string | number;
   label: string;
   value: string;
 }

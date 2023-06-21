@@ -48,6 +48,7 @@ import useReasonIndexService from "../../composables/useReasonIndexService";
 interface Props {
   form: Reactive<Form<SatisfactionFields>>;
 }
+// TODO FIX FORM FIELD TYPING
 defineProps<Props>();
 const reasonRequest = useReasonIndexService();
 reasonRequest.fetch({ origin: "worksite" });

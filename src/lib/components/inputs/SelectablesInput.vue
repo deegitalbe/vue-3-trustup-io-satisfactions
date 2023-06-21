@@ -16,15 +16,16 @@ import { Reactive, Field } from "@henrotaym/vue-3-forms";
 import { useSelectableReason } from "../../composables";
 const props = defineProps<{
   reasons: Array<Reason>;
-  formField: Reactive<Field>;
+  formField: Reactive<Field<string | number | null>>;
 }>();
 
 const { selectables } = useSelectableReason(props.reasons);
 const selected = computed({
   get() {
-    return props.formField.value as number;
+    return props.formField.value;
   },
-  set(modelValue: number) {
+  set(modelValue: number | string | null) {
+    console.log(modelValue, "coucou");
     props.formField.setValue(modelValue);
   },
 });
