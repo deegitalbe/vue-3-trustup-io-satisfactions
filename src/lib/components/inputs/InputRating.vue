@@ -4,7 +4,6 @@
       v-for="(star, index) in numberOfStars"
       :key="index"
       v-model="ratingValue"
-      :star="star"
       :index="index"
     >
     </rating-star>

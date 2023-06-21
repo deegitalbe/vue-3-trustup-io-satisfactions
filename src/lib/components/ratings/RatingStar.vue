@@ -13,7 +13,6 @@ import { ref } from "vue";
 
 interface Props {
   modelValue?: number;
-  star: any;
   index: number;
 }
 
