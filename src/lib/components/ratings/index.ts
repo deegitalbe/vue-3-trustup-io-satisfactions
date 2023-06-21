@@ -1,2 +1,1 @@
-export { default as Ratings } from "./RatingsModule.vue";
-export * from "./icons";
+export { default as RatingStar } from "./RatingStar.vue";
