@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.0
+
+### Minor Changes
+
+- 66e7e26: Updating dependencies
+
 ## 0.3.13
 
 ### Patch Changes
