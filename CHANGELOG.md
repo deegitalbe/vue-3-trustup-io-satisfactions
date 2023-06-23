@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.7
+
+### Patch Changes
+
+- f1e9a41: Testing new modal implementation.
+
 ## 0.4.6
 
 ### Patch Changes
