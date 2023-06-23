@@ -427,10 +427,10 @@
     vue "^3.2.47"
     zod "^3.21.4"
 
-"@henrotaymcorp/vue-modal@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@henrotaymcorp/vue-modal/-/vue-modal-0.0.2.tgz#2a56b00ca896e9a6c1d0500a05812d4331be2e6a"
-  integrity sha512-R9wZGC6ghxGSfE07cdNKm5IAA++03dy3x6Qutw5aeHDCjFDQgAskmmdLQbn8Y3ppxqF49kqMHyyqyiy9/F3/fQ==
+"@henrotaymcorp/vue-modal@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@henrotaymcorp/vue-modal/-/vue-modal-0.0.5.tgz#ff5b7bc630c8f3fa8ec31e3bb021fe0fabdadbd7"
+  integrity sha512-YLELVgkf5i4P0q40EHrFhG6zS6sCYp41QJRARUNN09gHzAHmn84X1cwHMc2HAOntajaD6NT+1XW4XbfXgQuz/w==
   dependencies:
     mitt "^3.0.0"
     vue "^3.2.47"
