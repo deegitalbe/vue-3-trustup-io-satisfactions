@@ -5,7 +5,7 @@
       :form="satisfactionEditService.form"
     />
     <template v-else>
-      <div>{{ $t("app.form.title.satisfaction") }}</div>
+      <div>{{ $t("worksite-admin.sidebar.clients") }}</div>
       <AppLoader
         :is-full-page="false"
         first-circle-color="#5980e3"
