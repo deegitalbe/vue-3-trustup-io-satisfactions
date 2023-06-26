@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.10
+
+### Patch Changes
+
+- 0c56a6b: Updating translation key
+
 ## 0.4.9
 
 ### Patch Changes
