@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.8
+
+### Patch Changes
+
+- c81620f: Upgrading translation plugin.
+
 ## 0.4.7
 
 ### Patch Changes
