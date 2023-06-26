@@ -1,6 +1,6 @@
 <template>
   <CenteredModal>
-    <satisfaction-form :form="form" />
+    <satisfaction-form :form="form" :is-edit="false" />
   </CenteredModal>
 </template>
 

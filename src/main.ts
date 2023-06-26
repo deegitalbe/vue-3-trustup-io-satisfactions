@@ -8,6 +8,7 @@ import { modalPlugin } from "@henrotaymcorp/vue-modal";
 const app = createApp(App);
 app
   .use(modalPlugin)
+  // TODO ADD KEY FOR PACKAGE TRANSLATION
   .use(translationPlugin, { appName: "worksite-admin" })
   .use(satisfactionPlugin)
   .mount("#app");

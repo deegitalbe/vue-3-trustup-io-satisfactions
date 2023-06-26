@@ -3,16 +3,15 @@
     <satisfaction-form
       v-if="satisfactionEditService.service.isReady()"
       :form="satisfactionEditService.form"
+      :is-edit="true"
     />
-    <template v-else>
-      <div>{{ $t("worksite-admin.sidebar.clients") }}</div>
-      <AppLoader
-        :is-full-page="false"
-        first-circle-color="#5980e3"
-        second-circle-color="#a6baed"
-        third-circle-color="#1B4CCA"
-      />
-    </template>
+    <AppLoader
+      v-else
+      :is-full-page="false"
+      first-circle-color="#5980e3"
+      second-circle-color="#a6baed"
+      third-circle-color="#1B4CCA"
+    />
   </CenteredModal>
 </template>
 
@@ -28,7 +27,6 @@ interface Props {
   builder: SatisfactionFormBuilder;
   uuid: string;
 }
-console.log("EditNoteModal triggered");
 const props = defineProps<Props>();
 const satisfactionEditService = useSatisfactionEditService(
   props.builder,

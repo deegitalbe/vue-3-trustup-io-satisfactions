@@ -5,7 +5,6 @@ import { useModal } from "@henrotaymcorp/vue-modal";
 
 export const useEditSatisfaction = (uuid: string) => {
   const builder = new SatisfactionFormBuilder();
-  console.log("coucou useEditSatisfaction triggered");
   const { open: rawOpen, close } = useModal(EditNoteModal);
 
   const service = new StoreService();

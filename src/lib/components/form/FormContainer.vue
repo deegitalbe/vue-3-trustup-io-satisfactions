@@ -1,7 +1,11 @@
 <template>
   <form class="space-y-8 relative" action="" @submit.prevent="form.submit">
     <h3 class="first-letter:capitalize text-center text-base font-semibold">
-      {{ $t("app.form.title.satisfaction") }}
+      {{
+        isEdit
+          ? $t("app.form.title.satisfaction")
+          : $t("app.form.title.updateSatisfaction")
+      }}
     </h3>
     <slot></slot>
     <button
@@ -20,5 +24,5 @@
 import { Form } from "@henrotaym/vue-3-forms";
 import { Reactive } from "@henrotaym/vue-3-forms";
 
-defineProps<{ form: Reactive<Form> }>();
+defineProps<{ form: Reactive<Form>; isEdit: boolean }>();
 </script>

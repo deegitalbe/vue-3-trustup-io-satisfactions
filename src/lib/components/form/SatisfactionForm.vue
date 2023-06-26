@@ -1,5 +1,5 @@
 <template>
-  <form-container v-if="reasonRequest.isReady()" :form="form">
+  <form-container v-if="reasonRequest.isReady()" :form="form" :is-edit="isEdit">
     <div class="space-y-4">
       <row-with-input
         v-if="form.fields.isUsing.value === true"
@@ -47,6 +47,7 @@ import useReasonIndexService from "../../composables/useReasonIndexService";
 
 interface Props {
   form: Reactive<Form<SatisfactionFields>>;
+  isEdit: boolean;
 }
 // TODO FIX FORM FIELD TYPING
 defineProps<Props>();
