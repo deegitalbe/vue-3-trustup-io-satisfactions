@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.11
+
+### Patch Changes
+
+- 230e5e1: Updating css for checkboxes
+
 ## 0.4.10
 
 ### Patch Changes
