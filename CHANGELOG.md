@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.9
+
+### Patch Changes
+
+- 82e700b: Using prefix for translations.
+
 ## 0.4.8
 
 ### Patch Changes
