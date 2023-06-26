@@ -4,13 +4,15 @@
       v-if="satisfactionEditService.service.isReady()"
       :form="satisfactionEditService.form"
     />
-    <AppLoader
-      v-else
-      :is-full-page="false"
-      first-circle-color="#5980e3"
-      second-circle-color="#a6baed"
-      third-circle-color="#1B4CCA"
-    />
+    <template v-else>
+      <div>{{ $t("app.form.title.satisfaction") }}</div>
+      <AppLoader
+        :is-full-page="false"
+        first-circle-color="#5980e3"
+        second-circle-color="#a6baed"
+        third-circle-color="#1B4CCA"
+      />
+    </template>
   </CenteredModal>
 </template>
 
