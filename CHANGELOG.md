@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.12
+
+### Patch Changes
+
+- 74ea85a: Adding zindex to checkboxes
+
 ## 0.4.11
 
 ### Patch Changes
