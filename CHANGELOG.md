@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.13
+
+### Patch Changes
+
+- d132bfa: fixing min width and height
+
 ## 0.4.12
 
 ### Patch Changes
