@@ -8,13 +8,13 @@
         v-model="selected"
         type="checkbox"
         name="toggleSatisfaction"
-        class="absolute block w-5 h-5 rounded-full bg-white appearance-none cursor-pointer checked:right-0 border border-gray-300"
+        class="absolute z-[999] block w-5 h-5 rounded-full bg-white appearance-none cursor-pointer checked:right-0 border border-gray-300"
         @input="formField.validator.resetValidation"
         @blur="formField.validator.validate"
       />
       <label
         for="toggleSatisfaction"
-        class="block overflow-hidden h-5 rounded-full cursor-pointer"
+        class="block h-5 rounded-full cursor-pointer"
         :class="getBackground()"
       ></label>
     </div>

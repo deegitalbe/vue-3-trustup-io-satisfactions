@@ -3,8 +3,8 @@
     <h3 class="first-letter:capitalize text-center text-base font-semibold">
       {{
         isEdit
-          ? $t("app.form.title.satisfaction")
-          : $t("app.form.title.updateSatisfaction")
+          ? $t("app.form.title.updateSatisfaction")
+          : $t("app.form.title.satisfaction")
       }}
     </h3>
     <slot></slot>
