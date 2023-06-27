@@ -34,6 +34,7 @@ const getBackground = () => {
   if (!selected.value) return "bg-red-400";
   if (selected.value) return "bg-green-400";
   return "bg-green-400";
+};
 const selected = computed({
   get() {
     return props.formField.value as boolean;
