@@ -1,20 +1,20 @@
 <template>
-  <div class="flex space-x-2">
+  <div class="flex space-x-2 min-h-[20px]">
     <div
-      class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in text-[#dbd1d1]"
+      class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in text-[#dbd1d1] min-h-[20px]"
     >
       <input
         id="toggleSatisfaction"
         v-model="selected"
         type="checkbox"
         name="toggleSatisfaction"
-        class="absolute z-[999] block w-5 h-5 rounded-full bg-white appearance-none cursor-pointer checked:right-0 border border-gray-300"
+        class="absolute z-[999] block w-5 h-5 rounded-full bg-white appearance-none cursor-pointer checked:right-0 border border-gray-300 min-h-[20px] min-w-[20px]"
         @input="formField.validator.resetValidation"
         @blur="formField.validator.validate"
       />
       <label
         for="toggleSatisfaction"
-        class="block h-5 rounded-full cursor-pointer"
+        class="block h-5 rounded-full cursor-pointer min-h-[20px]"
         :class="getBackground()"
       ></label>
     </div>
@@ -32,6 +32,7 @@ interface Props {
 const props = defineProps<Props>();
 const getBackground = () => {
   if (!selected.value) return "bg-red-400";
+  if (selected.value) return "bg-green-400";
   return "bg-green-400";
 };
 const selected = computed({
