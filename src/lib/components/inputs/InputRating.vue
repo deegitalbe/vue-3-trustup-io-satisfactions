@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex w-full">
     <rating-star
       v-for="(star, index) in numberOfStars"
       :key="index"

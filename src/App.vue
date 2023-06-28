@@ -25,10 +25,16 @@
 <script setup lang="ts">
 import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
-import { useEditSatisfaction } from "./lib/composables";
 import { ModalsContainer } from "@henrotaymcorp/vue-modal";
 import "@henrotaymcorp/vue-modal/dist/style.css";
+import useCreateSatisfaction from "./lib/composables/useCreateSatisfaction";
+import Origin from "./lib/enums/Origin";
 const toasteo = useToasteo();
-const { open, onSuccess } = useEditSatisfaction("1");
+const { open, onSuccess } = useCreateSatisfaction({
+  origin: Origin.WORKSITE,
+  createdById: 1,
+  relatedToId: "1",
+  relatedToType: "tenant",
+});
 onSuccess((note) => console.log(note));
 </script>
