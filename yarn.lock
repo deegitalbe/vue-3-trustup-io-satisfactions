@@ -259,13 +259,6 @@
     vue "^3.2.47"
     vue-i18n "9"
 
-"@deegital/vue-trustup-io-toasteo@^1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@deegital/vue-trustup-io-toasteo/-/vue-trustup-io-toasteo-1.1.9.tgz#f949c70d4a128d44be9053e3125a3076c0cd05d3"
-  integrity sha512-NmFEGP6Aesdl2iB51fACRoYs4wgg0gPxl1ud7wGWrcCuCbNMggZlMFyreHryEQQ5D3WOChU6a1nnXhvSbN3RVg==
-  dependencies:
-    vue "^3.2.47"
-
 "@esbuild/android-arm64@0.17.19":
   version "0.17.19"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.17.19.tgz#bafb75234a5d3d1b690e7c2956a599345e84a2fd"
@@ -2275,11 +2268,6 @@ inherits@2:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
-
-install@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/install/-/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
-  integrity sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==
 
 internal-slot@^1.0.5:
   version "1.0.5"
