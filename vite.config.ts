@@ -1,4 +1,5 @@
-import { defineConfig, loadEnv } from "vite";
+/// <reference types="vitest" />
+import { loadEnv, defineConfig } from "vite";
 import eslint from "vite-plugin-eslint";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
@@ -34,6 +35,12 @@ export default ({ mode }) => {
     server: {
       host: true,
       port: parseInt(process.env.VITE_PORT), // This is the port which we will use in docker
+    },
+    test: {
+      browser: {
+        enabled: true,
+        name: "chrome",
+      },
     },
   });
 };
