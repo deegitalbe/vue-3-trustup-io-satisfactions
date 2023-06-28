@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.16
+
+### Patch Changes
+
+- f10832c: Updating boiler plate
+
 ## 0.4.15
 
 ### Patch Changes
