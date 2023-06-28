@@ -1,10 +1,7 @@
 <template>
   <form-container v-if="reasonRequest.isReady()" :form="form" :is-edit="isEdit">
     <div class="space-y-4">
-      <row-with-input
-        v-if="form.fields.isUsing.value === true"
-        :is-centered="true"
-      >
+      <row-with-input :is-centered="true">
         <form-field :form-field="form.fields.value" class="items-center">
           <input-rating
             :form-field="form.fields.value"
