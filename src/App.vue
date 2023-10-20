@@ -28,13 +28,14 @@ import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "@henrotaymcorp/vue-modal";
 import "@henrotaymcorp/vue-modal/dist/style.css";
 import useCreateSatisfaction from "./lib/composables/useCreateSatisfaction";
-import Origin from "./lib/enums/Origin";
+import ORIGIN from "./lib/enums/Origin";
+import RELATED_TO_TYPE from "./lib/enums/RelatedToType";
 const toasteo = useToasteo();
 const { open, onSuccess } = useCreateSatisfaction({
-  origin: Origin.MARKETPLACE,
+  origin: ORIGIN.MARKETPLACE,
   createdById: 1,
   relatedToId: "1",
-  relatedToType: "tenant",
+  relatedToType: RELATED_TO_TYPE.TENANT,
 });
 onSuccess((note) => console.log(note));
 </script>

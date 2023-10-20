@@ -1,6 +1,9 @@
-enum Origin {
-  WORKSITE = "worksite",
-  MARKETPLACE = "marketplace",
-}
+export type Enum<TEnum> = TEnum[keyof TEnum];
 
-export default Origin;
+const ORIGIN = {
+  WORKSITE: "worksite",
+  MARKETPLACE: "marketplace",
+} as const;
+
+export type Origin = Enum<typeof ORIGIN>;
+export default ORIGIN;

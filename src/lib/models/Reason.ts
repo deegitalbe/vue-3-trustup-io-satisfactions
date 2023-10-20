@@ -1,4 +1,5 @@
 import { ReasonAttributes } from "../api/endpoints/Reason";
+import { Origin } from "../enums/Origin";
 
 export default class Reason {
   private _id;
@@ -22,7 +23,7 @@ export default class Reason {
     return this._origin;
   }
 
-  set origin(value: "marketplace" | "worksite") {
+  set origin(value: Origin) {
     this._origin = value;
   }
 

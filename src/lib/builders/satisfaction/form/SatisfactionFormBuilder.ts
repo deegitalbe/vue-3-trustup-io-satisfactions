@@ -1,8 +1,10 @@
 import { Field, Form, useReactiveForm } from "@henrotaym/vue-3-forms";
 import Satisfaction from "../../../models/Satisfaction";
 import { SatisfactionFields } from "../../../types";
-import Origin from "../../../enums/Origin";
 import { z } from "zod";
+import { Origin } from "../../../enums/Origin";
+import ORIGIN from "../../../enums/Origin";
+import { RelatedToType } from "../../../enums/RelatedToType";
 type OnSuccess = (satisfaction: Satisfaction) => void;
 type OnSubmit = (form: Form<SatisfactionFields>) => Promise<Satisfaction>;
 
@@ -16,7 +18,7 @@ export class SatisfactionFormBuilder {
   private _reason: number | null = null;
   private _createdById!: number;
   private _relatedToId!: string;
-  private _relatedToType!: string;
+  private _relatedToType!: RelatedToType;
 
   public onSuccess(onSuccess: OnSuccess) {
     this._onSuccess = onSuccess;
@@ -63,7 +65,7 @@ export class SatisfactionFormBuilder {
     return this;
   }
 
-  public setRelatedToType(relatedToType: string) {
+  public setRelatedToType(relatedToType: RelatedToType) {
     this._relatedToType = relatedToType;
     return this;
   }
@@ -92,8 +94,8 @@ export class SatisfactionFormBuilder {
     const origin = new Field({
       label: "Origin",
       value: this._origin,
-      validation: z.enum(["marketplace", "worksite"]),
-    }) as Field<Origin>;
+      validation: z.nativeEnum(ORIGIN),
+    });
 
     const text = new Field({
       label: "Text",

@@ -1,16 +1,17 @@
 import { Client, Request } from "@henrotaym/api-client";
 import ReasonCredential from "../credentials/ReasonCredential";
 import { z } from "zod";
+import ORIGIN from "../../enums/Origin";
 
 const queryZ = z.object({
-  origin: z.enum(["marketplace", "worksite"]),
+  origin: z.nativeEnum(ORIGIN),
 });
 export type Query = z.infer<typeof queryZ>;
 
 const reasonAttributes = z.object({
   id: z.number(),
   title: z.string(),
-  origin: z.enum(["marketplace", "worksite"]),
+  origin: z.nativeEnum(ORIGIN),
 });
 export type ReasonAttributes = z.infer<typeof reasonAttributes>;
 

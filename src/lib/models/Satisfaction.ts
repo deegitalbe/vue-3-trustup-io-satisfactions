@@ -1,5 +1,6 @@
-import Origin from "../enums/Origin";
 import { SatisfactionAttributes } from "../types";
+import { Origin } from "../enums/Origin";
+import { RelatedToType } from "../enums/RelatedToType";
 export default class Satisfaction {
   private _id;
   private _value;
@@ -16,7 +17,7 @@ export default class Satisfaction {
     this._id = satisfaction.data.id;
     this._value = satisfaction.data.value;
     this._is_using = satisfaction.data.is_using;
-    this._origin = satisfaction.data.origin as Origin;
+    this._origin = satisfaction.data.origin;
     this._text = satisfaction.data.text;
     this._reason = satisfaction.data.reason.id;
     this._createdById = satisfaction.data.created_by_id;
@@ -89,7 +90,7 @@ export default class Satisfaction {
     return this._relatedToType;
   }
 
-  set relatedToType(relatedToType: string) {
+  set relatedToType(relatedToType: RelatedToType) {
     this._relatedToType = relatedToType;
   }
 
