@@ -1,5 +1,17 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.4.18
+
+### Patch Changes
+
+- 92764ee: .
+- 88bd98b: Addin typing for relatedType.
+- 4a3dd83: Fixing hard coded origin
+- Updated dependencies [92764ee]
+- Updated dependencies [88bd98b]
+- Updated dependencies [4a3dd83]
+  - @deegital/vue-3-trustup-io-satisfactions@0.4.18
+
 ## 0.4.17
 
 ### Patch Changes
