@@ -1,5 +1,4 @@
 import { Client, Request } from "@henrotaym/api-client";
-import ReasonCredential from "../credentials/ReasonCredential";
 import { z } from "zod";
 import ORIGIN from "../../enums/Origin";
 
@@ -23,16 +22,10 @@ export type ReasonResponse = z.infer<typeof ResponseSchema>;
 
 class Reason {
   private _client: Client;
-  public baseUrl: string;
-
-  constructor(baseUrl = "https://satisfaction.trustup.io.test") {
-    this._client = new Client(
-      new ReasonCredential().beforeSending((request) =>
-        request.setBaseUrl(this.baseUrl).appendToBaseUrl("api/reasons")
-      )
-    );
-    this.baseUrl = baseUrl;
+  constructor(client: Client) {
+    this._client = client;
   }
+
   async index(query: Query): Promise<ReasonResponse | undefined> {
     const validation = queryZ.safeParse(query);
 
@@ -40,7 +33,8 @@ class Reason {
 
     const request = new Request<ReasonResponse>()
       .setVerb("GET")
-      .addQuery(query);
+      .addQuery(query)
+      .setUrl("api/reasons");
     const response = await this._client.try(request);
 
     if (response?.failed()) return;

@@ -8,3 +8,4 @@ export * from "./models";
 export * from "./types";
 export * from "./plugins";
 export * from "./components";
+export * from "./providers";

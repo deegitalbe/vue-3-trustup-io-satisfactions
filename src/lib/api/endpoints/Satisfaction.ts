@@ -1,6 +1,6 @@
 import { z } from "zod";
-import SatisfactionClientFactory from "../../factories/satisfaction/client/SatisfactionClientFactory";
 import ShowSatisfactionRequestFactory from "../../factories/satisfaction/request/ShowSatisfactionRequestFactory";
+import { Client } from "@henrotaym/api-client";
 
 const QueryZ = z.object({
   value: z.number().gte(0).lte(5).int(),
@@ -14,18 +14,17 @@ const QueryZ = z.object({
 });
 export type SatisfactionQuery = z.infer<typeof QueryZ>;
 class Satisfaction {
+  private _client;
   private _requestFactory;
-  private _clientFactory;
-  constructor() {
-    this._clientFactory = new SatisfactionClientFactory();
-    this._requestFactory = new ShowSatisfactionRequestFactory();
+  // ShowSatisfactionRequestFactory
+  constructor(client: Client, _requestFactory: ShowSatisfactionRequestFactory) {
+    this._client = client;
+    this._requestFactory = _requestFactory;
   }
 
-  // TODO PARSE
   async show(uuid: number) {
-    const client = this._clientFactory.create();
     const request = this._requestFactory.create(uuid);
-    const response = await client.try(request);
+    const response = await this._client.try(request);
     if (response?.failed()) return;
 
     return response?.response?.get();

@@ -25,7 +25,6 @@ const selected = computed({
     return props.formField.value;
   },
   set(modelValue: number | string | null) {
-    console.log(modelValue, "coucou");
     props.formField.setValue(modelValue);
   },
 });

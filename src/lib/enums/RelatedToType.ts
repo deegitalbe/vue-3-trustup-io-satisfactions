@@ -1,6 +1,6 @@
 import { Enum } from "./Origin";
 const RELATED_TO_TYPE = {
-  PRO: "pro",
+  PRO: "professional",
   TENANT: "tenant",
 } as const;
 

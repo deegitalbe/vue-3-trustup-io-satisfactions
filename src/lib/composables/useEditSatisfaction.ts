@@ -1,13 +1,13 @@
 import EditNoteModal from "../components/modals/EditNoteModal.vue";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
-import StoreService from "../factories/satisfaction/StoreService";
 import { useModal } from "@henrotaymcorp/vue-modal";
+import useUpdateSatisfactionService from "./useUpdateSatisfactionService";
 
 export const useEditSatisfaction = (uuid: string) => {
   const builder = new SatisfactionFormBuilder();
   const { open: rawOpen, close } = useModal(EditNoteModal);
 
-  const service = new StoreService();
+  const service = useUpdateSatisfactionService();
 
   builder.onSubmit(async (form) => {
     const response = await service.update({ fields: form.fields, uuid });

@@ -1,16 +1,15 @@
 import { Loader } from "@henrotaym/helpers";
 import { SatisfactionEndpoint } from "../api/endpoints";
 import Satisfaction from "../models/Satisfaction";
-import { reactive } from "vue";
 import { SatisfactionAttributes } from "../types";
 
 class SatisfactionShowService {
   private _satisfaction!: Satisfaction;
   private _endpoint;
   private _loader;
-  constructor() {
-    this._endpoint = new SatisfactionEndpoint();
-    this._loader = reactive(new Loader(false));
+  constructor(endpoint: SatisfactionEndpoint, loader: Loader) {
+    this._endpoint = endpoint;
+    this._loader = loader;
   }
 
   public async fetch(uuid: number) {

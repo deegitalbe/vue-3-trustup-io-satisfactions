@@ -28,6 +28,7 @@ import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "@henrotaymcorp/vue-modal";
 import "@henrotaymcorp/vue-modal/dist/style.css";
 import { RELATED_TO_TYPE, ORIGIN, useCreateSatisfaction } from "./lib";
+
 const toasteo = useToasteo();
 const { open, onSuccess } = useCreateSatisfaction({
   origin: ORIGIN.MARKETPLACE,

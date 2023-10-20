@@ -7,12 +7,10 @@ import { ApiRequestData } from "@henrotaym/api-client/dist/types/requests";
 class UpdateSatisfactionRequestFactory {
   private _requestFactory;
   private _requestDataFactory;
-  public baseUrl: string;
 
-  public constructor(baseUrl = "https://satisfaction.trustup.io.test") {
+  public constructor() {
     this._requestFactory = new SatisfactionRequestFactory();
     this._requestDataFactory = new SatisfactionRequestDataFactory();
-    this.baseUrl = baseUrl;
   }
 
   public create({
@@ -23,10 +21,7 @@ class UpdateSatisfactionRequestFactory {
     uuid: string;
   }) {
     const request = this._requestFactory.create();
-    request
-      .setBaseUrl(this.baseUrl)
-      .appendToBaseUrl("api/notes")
-      .setVerb("PATCH");
+    request.appendToBaseUrl("api/notes").setVerb("PATCH");
     request
       .addData(this._requestDataFactory.create(fields) as ApiRequestData)
       .asForm(true);

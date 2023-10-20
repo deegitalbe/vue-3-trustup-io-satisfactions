@@ -1,10 +1,10 @@
 import CreateNoteModal from "../components/modals/CreateNoteModal.vue";
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
-import StoreService from "../factories/satisfaction/StoreService";
 import { reactive } from "vue";
 import { useModal } from "@henrotaymcorp/vue-modal";
 import { Origin } from "../enums/Origin";
 import { RelatedToType } from "../enums/RelatedToType";
+import useStoreSatisfactionService from "./useStoreSatisfactionService";
 
 export const useCreateSatisfaction = ({
   origin,
@@ -17,7 +17,7 @@ export const useCreateSatisfaction = ({
   relatedToId: string;
   relatedToType: RelatedToType;
 }) => {
-  const service = new StoreService();
+  const service = useStoreSatisfactionService();
 
   const builder = reactive(new SatisfactionFormBuilder())
     .setOrigin(origin)

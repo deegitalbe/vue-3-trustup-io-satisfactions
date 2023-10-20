@@ -10,5 +10,7 @@ app
   .use(modalPlugin)
   // TODO ADD KEY FOR PACKAGE TRANSLATION
   .use(translationPlugin, { appName: "worksite-admin" })
-  .use(satisfactionPlugin)
+  .use(satisfactionPlugin, { url: "http://satisfaction.trustup.io.test" })
   .mount("#app");
+
+export default app;

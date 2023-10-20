@@ -1,8 +1,8 @@
 import { z } from "zod";
-import SatisfactionClientFactory from "../../factories/satisfaction/client/SatisfactionClientFactory";
 import StoreSatisfactionRequestFactory from "../../factories/satisfaction/request/StoreSatisfactionRequestFactory";
 import { Reactive } from "@henrotaym/vue-3-forms";
 import { SatisfactionFields } from "../../types";
+import { Client } from "@henrotaym/api-client";
 
 const QueryZ = z.object({
   value: z.number().gte(0).lte(5).int(),
@@ -17,16 +17,16 @@ const QueryZ = z.object({
 export type SatisfactionQuery = z.infer<typeof QueryZ>;
 class StoreSatisfactionEndpoint {
   private _requestFactory;
-  private _clientFactory;
-  constructor() {
-    this._clientFactory = new SatisfactionClientFactory();
-    this._requestFactory = new StoreSatisfactionRequestFactory();
+  private _client;
+  constructor(client: Client, requestFactory: StoreSatisfactionRequestFactory) {
+    this._client = client;
+    this._requestFactory = requestFactory;
   }
 
   async store(fields: Reactive<SatisfactionFields>) {
-    const client = this._clientFactory.create();
     const request = this._requestFactory.create(fields);
-    const response = await client.try(request);
+
+    const response = await this._client.try(request);
 
     if (response?.failed()) return;
     return response?.response?.get();

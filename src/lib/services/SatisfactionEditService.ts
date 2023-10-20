@@ -1,6 +1,6 @@
 import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionFormBuilder";
-import useSatisfactionShowService from "../composables/useSatisfactionShowService";
 import { UnwrapNestedRefs } from "vue";
+import useShowSatisfactionService from "../composables/useShowSatisfactionService";
 class SatisfactionEditService {
   public builder;
   private _service;
@@ -10,7 +10,7 @@ class SatisfactionEditService {
     uuid: string
   ) {
     this.builder = builder;
-    this._service = useSatisfactionShowService();
+    this._service = useShowSatisfactionService();
     this._uuid = uuid;
   }
 

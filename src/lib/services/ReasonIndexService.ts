@@ -12,9 +12,9 @@ class ReasonIndexService {
   private _endpoint;
   private _loader;
 
-  constructor() {
-    this._endpoint = new ReasonEndpoint();
-    this._loader = new Loader(false);
+  constructor(endpoint: ReasonEndpoint, loader: Loader) {
+    this._endpoint = endpoint;
+    this._loader = loader;
   }
 
   public async fetch(origin: Query) {

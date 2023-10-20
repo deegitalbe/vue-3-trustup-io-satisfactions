@@ -6,20 +6,19 @@ import { ApiRequestData } from "@henrotaym/api-client/dist/types/requests";
 class StoreSatisfactionRequestFactory {
   private _requestFactory;
   private _requestDataFactory;
-  public baseUrl: string;
 
-  public constructor(baseUrl = "https://satisfaction.trustup.io.test") {
-    this._requestFactory = new SatisfactionRequestFactory();
-    this._requestDataFactory = new SatisfactionRequestDataFactory();
-    this.baseUrl = baseUrl;
+  public constructor(
+    requestFactory: SatisfactionRequestFactory,
+    requestDataFactory: SatisfactionRequestDataFactory
+  ) {
+    this._requestFactory = requestFactory;
+    this._requestDataFactory = requestDataFactory;
   }
 
   public create(fields: Reactive<SatisfactionFields>) {
     const request = this._requestFactory.create();
-    request
-      .setBaseUrl(this.baseUrl)
-      .appendToBaseUrl("api/notes")
-      .setVerb("POST");
+    request.setUrl("api/notes").setVerb("POST");
+
     const data = this._requestDataFactory.create(fields);
     request.addData(data as ApiRequestData).asForm(true);
     return request;
