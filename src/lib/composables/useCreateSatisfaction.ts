@@ -18,7 +18,6 @@ export const useCreateSatisfaction = ({
   relatedToType: RelatedToType;
 }) => {
   const service = useStoreSatisfactionService();
-
   const builder = reactive(new SatisfactionFormBuilder())
     .setOrigin(origin)
     .setCreatedById(createdById)

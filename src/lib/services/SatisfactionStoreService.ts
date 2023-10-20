@@ -17,10 +17,11 @@ class SatisfactionStoreService {
   public async store(fields: Reactive<SatisfactionFields>) {
     // call endpoint then call on succes.
     // TODO
-    const response = await this._endpoint.store(fields);
-    if (!response) return;
-    this._onSuccess?.(response);
-    return response;
+    const attributes = await this._endpoint.store(fields);
+    if (!attributes) return;
+    const satisfaction = new Satisfaction(attributes);
+    this._onSuccess?.(satisfaction);
+    return satisfaction;
   }
 
   public onSuccess(onSuccess: OnSuccess) {

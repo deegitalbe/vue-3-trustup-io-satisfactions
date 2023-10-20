@@ -3,6 +3,7 @@ import StoreSatisfactionRequestFactory from "../../factories/satisfaction/reques
 import { Reactive } from "@henrotaym/vue-3-forms";
 import { SatisfactionFields } from "../../types";
 import { Client } from "@henrotaym/api-client";
+import { SatisfactionAttributes } from "../../types/SatisfactionAttributes";
 
 const QueryZ = z.object({
   value: z.number().gte(0).lte(5).int(),
@@ -26,7 +27,7 @@ class StoreSatisfactionEndpoint {
   async store(fields: Reactive<SatisfactionFields>) {
     const request = this._requestFactory.create(fields);
 
-    const response = await this._client.try(request);
+    const response = await this._client.try<SatisfactionAttributes>(request);
 
     if (response?.failed()) return;
     return response?.response?.get();

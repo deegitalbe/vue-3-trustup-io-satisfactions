@@ -5,8 +5,14 @@ import { z } from "zod";
 import { Origin } from "../../../enums/Origin";
 import ORIGIN from "../../../enums/Origin";
 import { RelatedToType } from "../../../enums/RelatedToType";
-type OnSuccess = (satisfaction: Satisfaction) => void;
-type OnSubmit = (form: Form<SatisfactionFields>) => Promise<Satisfaction>;
+import {
+  useToasteoSuccess,
+  useToasteoError,
+} from "../../../composables/useToasteoNotification";
+export type OnSuccess = (satisfaction: Satisfaction) => void;
+export type OnSubmit = (
+  form: Form<SatisfactionFields>
+) => Promise<Satisfaction | undefined | null>;
 
 export class SatisfactionFormBuilder {
   private _value?: number = 2;
@@ -21,6 +27,10 @@ export class SatisfactionFormBuilder {
   private _relatedToType!: RelatedToType;
 
   public onSuccess(onSuccess: OnSuccess) {
+    // const onSuccessman: OnSuccess = (satisfaction) => {
+    //   onSuccessCallback(satisfaction);
+    //   useToasteoSuccess("dfhkjsdhfh");
+    // };
     this._onSuccess = onSuccess;
   }
 
@@ -140,6 +150,12 @@ export class SatisfactionFormBuilder {
 
     form.onSubmit(async (form) => {
       const satisfaction = await this._onSubmit(form);
+      if (!satisfaction) {
+        useToasteoError();
+        return;
+      }
+      useToasteoSuccess();
+      form.clear();
       if (this._onSuccess) await this._onSuccess?.(satisfaction);
     });
 
