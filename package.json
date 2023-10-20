@@ -1,7 +1,7 @@
 {
   "name": "@deegital/vue-3-trustup-io-satisfactions",
   "description": "vue-3-trustup-io-satisfactions",
-  "version": "0.4.17",
+  "version": "0.4.18",
   "type": "module",
   "files": [
     "dist"
@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "@deegital/vue-3-trustup-io-loader": "^0.0.8",
-    "@deegital/vue-3-trustup-io-satisfactions": "^0.4.17",
+    "@deegital/vue-3-trustup-io-satisfactions": "^0.4.18",
     "@deegital/vue-3-trustup-io-translations": "^0.0.15",
     "@henrotaym/api-client": "^1.3.3",
     "@henrotaym/vue-3-forms": "^1.0.1",
