@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.0
+
+### Minor Changes
+
+- 05cd2b5: Refactoring endpoints and services, adding new params to plugin for satisfaction url.
+
 ## 0.4.22
 
 ### Patch Changes
