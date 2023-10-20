@@ -31,7 +31,7 @@ import useCreateSatisfaction from "./lib/composables/useCreateSatisfaction";
 import Origin from "./lib/enums/Origin";
 const toasteo = useToasteo();
 const { open, onSuccess } = useCreateSatisfaction({
-  origin: Origin.WORKSITE,
+  origin: Origin.MARKETPLACE,
   createdById: 1,
   relatedToId: "1",
   relatedToType: "tenant",

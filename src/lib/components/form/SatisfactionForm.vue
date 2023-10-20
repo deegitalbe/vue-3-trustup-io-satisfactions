@@ -47,7 +47,7 @@ interface Props {
   isEdit: boolean;
 }
 // TODO FIX FORM FIELD TYPING
-defineProps<Props>();
+const props = defineProps<Props>();
 const reasonRequest = useReasonIndexService();
-reasonRequest.fetch({ origin: "worksite" });
+reasonRequest.fetch({ origin: props.form.fields.origin.value });
 </script>
