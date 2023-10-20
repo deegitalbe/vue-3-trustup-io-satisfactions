@@ -27,9 +27,7 @@ import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "@henrotaymcorp/vue-modal";
 import "@henrotaymcorp/vue-modal/dist/style.css";
-import useCreateSatisfaction from "./lib/composables/useCreateSatisfaction";
-import ORIGIN from "./lib/enums/Origin";
-import RELATED_TO_TYPE from "./lib/enums/RelatedToType";
+import { RELATED_TO_TYPE, ORIGIN, useCreateSatisfaction } from "./lib";
 const toasteo = useToasteo();
 const { open, onSuccess } = useCreateSatisfaction({
   origin: ORIGIN.MARKETPLACE,
