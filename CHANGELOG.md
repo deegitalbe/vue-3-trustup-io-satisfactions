@@ -1,5 +1,12 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.3
+
+### Patch Changes
+
+- 35aed45: minor
+- 9fe4058: fixing edit, icons..
+
 ## 0.5.2
 
 ### Patch Changes
