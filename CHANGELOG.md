@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.4
+
+### Patch Changes
+
+- 4de97b3: updating front
+
 ## 0.5.3
 
 ### Patch Changes
