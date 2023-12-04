@@ -48,6 +48,7 @@ interface Props {
 }
 // TODO FIX FORM FIELD TYPING
 const props = defineProps<Props>();
+
 const reasonRequest = useReasonIndexService();
 reasonRequest.fetch({ origin: props.form.fields.origin.value });
 </script>

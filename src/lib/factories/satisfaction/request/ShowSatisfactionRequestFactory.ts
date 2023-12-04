@@ -9,8 +9,7 @@ class ShowSatisfactionRequestFactory {
 
   public create(uuid: number) {
     const request = this._requestFactory.create();
-    request.appendToBaseUrl("api/notes").setVerb("GET").setUrl(uuid.toString());
-
+    request.setUrl(`api/notes/${uuid.toString()}`).setVerb("GET");
     return request;
   }
 }

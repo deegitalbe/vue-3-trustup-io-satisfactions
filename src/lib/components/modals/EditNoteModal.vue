@@ -1,16 +1,16 @@
 <template>
   <CenteredModal>
-    <satisfaction-form
-      v-if="satisfactionEditService.service.isReady()"
-      :form="satisfactionEditService.form"
-      :is-edit="true"
-    />
     <AppLoader
-      v-else
+      v-if="!satisfactionEditService.form.fields.origin.value"
       :is-full-page="false"
       first-circle-color="#5980e3"
       second-circle-color="#a6baed"
       third-circle-color="#1B4CCA"
+    />
+    <satisfaction-form
+      v-else
+      :form="satisfactionEditService.form"
+      :is-edit="true"
     />
   </CenteredModal>
 </template>

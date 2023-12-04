@@ -32,9 +32,9 @@ const emit = defineEmits<{
 
 const setStarColor = () => {
   if (props.modelValue <= 3 && index.value <= props.modelValue)
-    return "text-red-600";
+    return "text-red-600 text-2xl";
   if (!props.modelValue || index.value > props.modelValue)
-    return "text-gray-400";
+    return "text-gray-400 text-2xl";
   if (index.value <= props.modelValue) return "text-green-600";
 };
 </script>

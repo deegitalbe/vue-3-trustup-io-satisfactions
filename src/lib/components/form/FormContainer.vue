@@ -1,6 +1,7 @@
 <template>
   <form class="space-y-8 relative" action="" @submit.prevent="form.submit">
-    <h3 class="first-letter:capitalize text-center text-base font-semibold">
+    <i class="fa-solid fa-star text-2xl text-red-600"></i>
+    <h3 class="first-letter:capitalize text-center font-semibold text-2xl">
       {{
         isEdit
           ? $t("app.form.title.updateSatisfaction")
