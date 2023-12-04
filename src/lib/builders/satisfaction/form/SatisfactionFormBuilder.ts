@@ -9,6 +9,7 @@ import {
   useToasteoSuccess,
   useToasteoError,
 } from "../../../composables/useToasteoNotification";
+import { useTranslate } from "@deegital/vue-3-trustup-io-translations";
 export type OnSuccess = (satisfaction: Satisfaction) => void;
 export type OnSubmit = (
   form: Form<SatisfactionFields>
@@ -90,31 +91,31 @@ export class SatisfactionFormBuilder {
   }
   public build() {
     const value = new Field({
-      label: "Value",
+      label: useTranslate("app.satisfaction.form.fields.value"),
       value: this._value,
       validation: z.number(),
     });
 
     const isUsing = new Field({
-      label: "Using app",
+      label: useTranslate("app.satisfaction.form.fields.is_using"),
       value: this._is_using,
       validation: z.boolean(),
     });
 
     const origin = new Field({
-      label: "Origin",
+      label: useTranslate("app.satisfaction.form.fields.origin"),
       value: this._origin,
       validation: z.nativeEnum(ORIGIN),
     });
 
     const text = new Field({
-      label: "Text",
+      label: useTranslate("app.satisfaction.form.fields.text"),
       value: this._text,
       validation: z.string(),
     });
 
     const reason = new Field({
-      label: "Reason",
+      label: useTranslate("app.satisfaction.form.fields.reason"),
       value: this._reason,
       validation: z.number(),
     });

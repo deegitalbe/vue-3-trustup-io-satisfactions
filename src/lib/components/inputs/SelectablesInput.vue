@@ -3,7 +3,7 @@
     v-model="selected"
     :selectables="selectables"
     track-by="id"
-    title="Select a reason"
+    :title="`${$t('app.satisfaction.form.select.reason')}`"
     :form-field="formField"
     @blur="formField.validator.validate"
   ></select-common>
