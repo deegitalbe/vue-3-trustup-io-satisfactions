@@ -21,11 +21,10 @@ class UpdateSatisfactionRequestFactory {
     uuid: string;
   }) {
     const request = this._requestFactory.create();
-    request.setUrl("api/notes").setVerb("PATCH");
+    request.setUrl(`api/notes/${uuid}`).setVerb("PATCH");
     request
       .addData(this._requestDataFactory.create(fields) as ApiRequestData)
       .asForm(true);
-    request.setUrl(uuid);
 
     return request;
   }
