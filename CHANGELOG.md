@@ -1,5 +1,12 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.2
+
+### Patch Changes
+
+- 47646d1: Fixing update url.
+- ac79cee: adding further translation.
+
 ## 0.5.1
 
 ### Patch Changes
