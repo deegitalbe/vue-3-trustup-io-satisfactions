@@ -21,7 +21,7 @@ class UpdateSatisfactionRequestFactory {
     uuid: string;
   }) {
     const request = this._requestFactory.create();
-    request.appendToBaseUrl("api/notes").setVerb("PATCH");
+    request.setUrl("api/notes").setVerb("PATCH");
     request
       .addData(this._requestDataFactory.create(fields) as ApiRequestData)
       .asForm(true);
