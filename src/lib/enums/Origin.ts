@@ -1,7 +1,7 @@
 export type Enum<TEnum> = TEnum[keyof TEnum];
 
 const ORIGIN = {
-  WORKSITE: "worksite",
+  TOOLS: "tools",
   MARKETPLACE: "marketplace",
 } as const;
 

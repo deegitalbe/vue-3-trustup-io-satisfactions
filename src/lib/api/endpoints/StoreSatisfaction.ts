@@ -7,7 +7,7 @@ import { SatisfactionAttributes } from "../../types/SatisfactionAttributes";
 
 const QueryZ = z.object({
   value: z.number().gte(0).lte(5).int(),
-  origin: z.enum(["marketplace", "worksite"]),
+  origin: z.enum(["marketplace", "tools"]),
   text: z.string().min(10),
   created_by_id: z.number().int(),
   is_using: z.number().min(0).max(1),
