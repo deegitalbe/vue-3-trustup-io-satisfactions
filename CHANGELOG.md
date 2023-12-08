@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.5
+
+### Patch Changes
+
+- ee14fb9: Fixing origin value to mach api.
+
 ## 0.5.4
 
 ### Patch Changes
