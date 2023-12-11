@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.6
+
+### Patch Changes
+
+- 5f2709f: Updating related type enum.
+
 ## 0.5.5
 
 ### Patch Changes
