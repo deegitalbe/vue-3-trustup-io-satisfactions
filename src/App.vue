@@ -27,9 +27,14 @@ import { NotificationContainer } from "@deegital/vue-trustup-io-toasteo";
 import { useToasteo } from "@deegital/vue-trustup-io-toasteo";
 import { ModalsContainer } from "@henrotaymcorp/vue-modal";
 import "@henrotaymcorp/vue-modal/dist/style.css";
-import { useEditSatisfaction } from "./lib";
+import { ORIGIN, RELATED_TO_TYPE, useCreateSatisfaction } from "./lib";
 
 const toasteo = useToasteo();
-const { open, onSuccess } = useEditSatisfaction("4");
+const { open, onSuccess } = useCreateSatisfaction({
+  origin: ORIGIN.MARKETPLACE,
+  relatedToType: RELATED_TO_TYPE.ERP_QUOTE,
+  relatedToId: "aze",
+  createdById: 1,
+});
 onSuccess((note) => console.log(note));
 </script>
