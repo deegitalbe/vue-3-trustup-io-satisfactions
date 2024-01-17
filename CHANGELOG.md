@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.9
+
+### Patch Changes
+
+- 06060ad: clown
+
 ## 0.5.8
 
 ### Patch Changes
