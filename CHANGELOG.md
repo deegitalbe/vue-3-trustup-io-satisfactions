@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.8
+
+### Patch Changes
+
+- 61f7487: renaming key
+
 ## 0.5.7
 
 ### Patch Changes
