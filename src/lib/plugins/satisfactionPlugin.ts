@@ -7,7 +7,7 @@ import useSatisfactionPluginProvider from "../composables/useSatisfactionPluginP
 const satisfactionPlugin: Plugin<SatisfactionPluginOptions> = {
   install: (app, options) => {
     const { addTranslationsByKey } = useTranslation();
-    addTranslationsByKey("worksite-admin");
+    addTranslationsByKey("trustup-io-satisfaction-plugin");
     const provider = useSatisfactionPluginProvider(app);
     provider.set(options);
   },
