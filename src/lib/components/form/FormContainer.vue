@@ -3,7 +3,9 @@
     <h3 class="first-letter:capitalize text-center font-semibold text-base">
       {{
         isEdit
-          ? $t("trustup-io-satisfaction-plugin.app.form.title.updateSatisfaction")
+          ? $t(
+              "trustup-io-satisfaction-plugin.app.form.title.updateSatisfaction"
+            )
           : $t("trustup-io-satisfaction-plugin.app.form.title.satisfaction")
       }}
     </h3>

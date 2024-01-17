@@ -3,7 +3,9 @@
     v-model="selected"
     :selectables="selectables"
     track-by="id"
-    :title="`${$t('trustup-io-satisfaction-plugin.app.satisfaction.form.select.reason')}`"
+    :title="`${$t(
+      'trustup-io-satisfaction-plugin.app.satisfaction.form.select.reason'
+    )}`"
     :form-field="formField"
     @blur="formField.validator.validate"
   ></select-common>

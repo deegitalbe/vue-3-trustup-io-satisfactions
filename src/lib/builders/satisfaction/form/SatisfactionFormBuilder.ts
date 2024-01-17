@@ -91,31 +91,41 @@ export class SatisfactionFormBuilder {
   }
   public build() {
     const value = new Field({
-      label: useTranslate("trustup-io-satisfaction-plugin.app.satisfaction.form.fields.value"),
+      label: useTranslate(
+        "trustup-io-satisfaction-plugin.app.satisfaction.form.fields.value"
+      ),
       value: this._value,
       validation: z.number(),
     });
 
     const isUsing = new Field({
-      label: useTranslate("trustup-io-satisfaction-plugin.app.satisfaction.form.fields.is_using"),
+      label: useTranslate(
+        "trustup-io-satisfaction-plugin.app.satisfaction.form.fields.is_using"
+      ),
       value: this._is_using,
       validation: z.boolean(),
     });
 
     const origin = new Field({
-      label: useTranslate("trustup-io-satisfaction-plugin.app.satisfaction.form.fields.origin"),
+      label: useTranslate(
+        "trustup-io-satisfaction-plugin.app.satisfaction.form.fields.origin"
+      ),
       value: this._origin,
       validation: z.nativeEnum(ORIGIN),
     });
 
     const text = new Field({
-      label: useTranslate("trustup-io-satisfaction-plugin.app.satisfaction.form.fields.text"),
+      label: useTranslate(
+        "trustup-io-satisfaction-plugin.app.satisfaction.form.fields.text"
+      ),
       value: this._text,
       validation: z.string(),
     });
 
     const reason = new Field({
-      label: useTranslate("trustup-io-satisfaction-plugin.app.satisfaction.form.fields.reason"),
+      label: useTranslate(
+        "trustup-io-satisfaction-plugin.app.satisfaction.form.fields.reason"
+      ),
       value: this._reason,
       validation: z.number(),
     });
