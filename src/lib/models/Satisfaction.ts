@@ -19,7 +19,7 @@ export default class Satisfaction {
     this._is_using = satisfaction.data.is_using;
     this._origin = satisfaction.data.origin;
     this._text = satisfaction.data.text;
-    this._reason = satisfaction.data.reason.id;
+    this._reason = satisfaction.data.reason?.id || null;
     this._createdById = satisfaction.data.created_by_id;
     this._relatedToId = satisfaction.data.related_to_id;
     this._relatedToType = satisfaction.data.related_to_type;
@@ -66,7 +66,7 @@ export default class Satisfaction {
     return this._reason;
   }
 
-  set reason(reason: number) {
+  set reason(reason: number | null) {
     this._reason = reason;
   }
 
