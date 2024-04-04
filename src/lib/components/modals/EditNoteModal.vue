@@ -11,6 +11,7 @@
       v-else
       :form="satisfactionEditService.form"
       :is-edit="true"
+      :is-marketplace="isMarketplace"
     />
   </CenteredModal>
 </template>
@@ -26,6 +27,7 @@ import useSatisfactionEditService from "../../composables/useSatisfactionEditSer
 interface Props {
   builder: SatisfactionFormBuilder;
   uuid: string;
+  isMarketplace: boolean;
 }
 const props = defineProps<Props>();
 const satisfactionEditService = useSatisfactionEditService(
