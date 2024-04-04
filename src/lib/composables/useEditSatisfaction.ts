@@ -3,7 +3,7 @@ import SatisfactionFormBuilder from "../builders/satisfaction/form/SatisfactionF
 import { useModal } from "@henrotaymcorp/vue-modal";
 import useUpdateSatisfactionService from "./useUpdateSatisfactionService";
 
-export const useEditSatisfaction = (uuid: string) => {
+export const useEditSatisfaction = (uuid: string, isMarketplace: boolean) => {
   const builder = new SatisfactionFormBuilder();
   const { open: rawOpen, close } = useModal(EditNoteModal);
 
@@ -21,6 +21,7 @@ export const useEditSatisfaction = (uuid: string) => {
     rawOpen({
       builder: builder,
       uuid: uuid,
+      isMarketplace: isMarketplace,
     });
 
   return {
