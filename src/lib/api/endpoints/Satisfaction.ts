@@ -8,7 +8,7 @@ const QueryZ = z.object({
   text: z.string().min(10),
   created_by_id: z.number().int(),
   is_using: z.number().min(0).max(1),
-  reason_id: z.number().int(),
+  reason_id: z.number().int().nullable(),
   related_to_type: z.string(),
   related_to_id: z.string(),
 });

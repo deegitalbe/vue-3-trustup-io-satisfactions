@@ -10,7 +10,7 @@ interface Data {
   origin: Origin;
   text: string;
   is_using: boolean;
-  reason: Reason;
+  reason: Reason | null;
   created_by_id: number;
   date: string;
   related_to_id: string;
