@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.10
+
+### Patch Changes
+
+- df1b22e: Reason is nullable and ismarketplace props
+
 ## 0.5.9
 
 ### Patch Changes
