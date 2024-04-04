@@ -1,5 +1,11 @@
 # @deegital/vue-3-trustup-io-satisfactions
 
+## 0.5.11
+
+### Patch Changes
+
+- 48c6e91: Reason nullable everywhere
+
 ## 0.5.10
 
 ### Patch Changes
