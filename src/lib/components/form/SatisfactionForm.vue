@@ -10,7 +10,7 @@
         </form-field>
       </row-with-input>
       <row-with-input>
-        <form-field :form-field="form.fields.isUsing">
+        <form-field v-if="!isMarketplace" :form-field="form.fields.isUsing">
           <check-boxes :form-field="form.fields.isUsing"></check-boxes>
         </form-field>
       </row-with-input>
@@ -45,6 +45,7 @@ import useReasonIndexService from "../../composables/useReasonIndexService";
 interface Props {
   form: Reactive<Form<SatisfactionFields>>;
   isEdit: boolean;
+  isMarketplace: boolean;
 }
 // TODO FIX FORM FIELD TYPING
 const props = defineProps<Props>();

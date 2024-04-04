@@ -1,6 +1,10 @@
 <template>
   <CenteredModal>
-    <satisfaction-form :form="form" :is-edit="false" />
+    <satisfaction-form
+      :is-marketplace="isMarketplace"
+      :form="form"
+      :is-edit="false"
+    />
   </CenteredModal>
 </template>
 
@@ -14,6 +18,7 @@ import { CenteredModal } from "@henrotaymcorp/vue-modal";
 
 interface Props {
   builder: SatisfactionFormBuilder;
+  isMarketplace: boolean;
 }
 const props = defineProps<Props>();
 

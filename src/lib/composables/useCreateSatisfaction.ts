@@ -11,11 +11,13 @@ export const useCreateSatisfaction = ({
   createdById,
   relatedToId,
   relatedToType,
+  isMarketplace,
 }: {
   origin: Origin;
   createdById: number;
   relatedToId: string;
   relatedToType: RelatedToType;
+  isMarketplace: boolean;
 }) => {
   const service = useStoreSatisfactionService();
   const builder = reactive(new SatisfactionFormBuilder())
@@ -31,6 +33,7 @@ export const useCreateSatisfaction = ({
   const open = () =>
     rawOpen({
       builder: builder,
+      isMarketplace: isMarketplace,
     });
   return {
     open,

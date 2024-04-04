@@ -127,7 +127,7 @@ export class SatisfactionFormBuilder {
         "trustup-io-satisfaction-plugin.app.satisfaction.form.fields.reason"
       ),
       value: this._reason,
-      validation: z.number(),
+      validation: z.number().nullable(),
     });
 
     const createdById = new Field({
